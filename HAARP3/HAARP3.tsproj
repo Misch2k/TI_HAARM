@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4018.26">
+	<Project ProjectGUID="{42E92A3F-A165-4FB5-8D6F-5776CEB04310}" TargetNetId="5.15.244.186.1.1">
+		<System>
+			<Settings MaxCpus="2" NonWinCpus="1"/>
+			<Tasks>
+				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{6979128D-6070-4461-9250-96A0C053528A}" Name="Server" PrjFilePath="Server\Server.plcproj" TmcFilePath="Server\Server.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
+				<Instance Id="#x01010010" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>Server Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>Netzwerk.net_licht_01</Name>
+							<Comment>
+								<![CDATA[ Eingänge]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_licht_02</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_licht_04</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_alarm_01</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_besucher_01</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_besucher_02</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_besucher_04</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_alarm_02</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_alarm_04</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_heizung_01</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_heizung_02</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_heizung_04</Name>
+							<Type>INT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>Netzwerk.net_einbruch_alarm</Name>
+							<Comment>
+								<![CDATA[ Ausgänge]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_reset_besucher</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_heizung_out</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_wind</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_regen</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_sonne</Name>
+							<Type>REAL</Type>
+						</Var>
+					</Vars>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x01010011"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Io>
+			<Device DevType="112" AmsPort="28673" AmsNetId="5.15.244.186.2.1" RemoteName="Netzvariablen (EtherCAT Automation Protocol)" Id="1">
+				<Name>Netzvariablen (EtherCAT Automation Protocol)</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>Local Area Connection 2 (TwinCAT-Intel PCI Ethernet</DeviceDesc>
+						<DeviceName>\DEVICE\{DE2EE752-525C-46A5-8DE6-E419EE2F6FD9}</DeviceName>
+						<DeviceData>0001050ff4ba</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Image Id="1" AddrType="1" ImageType="3">
+					<Name>Prozessabbild</Name>
+				</Image>
+				<Box BoxType="9051" Id="1">
+					<Name>Server (Publisher)</Name>
+					<ImageId>99</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Eingänge</Name>
+						<Var BoxStateVariable="true">
+							<Name>FrameState</Name>
+							<Comment>
+								<![CDATA[0x0001 = Not sent (frame skipped)
+0x0002 = Error (frame oversized)
+0x0004 = Subscriber missing (Unicast only)
+]]>
+							</Comment>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Ausgänge</Name>
+						<Var BoxStateVariable="true">
+							<Name>FrameCtrl</Name>
+							<Comment>
+								<![CDATA[0x0001 = Disable sending
+0x0002 = Remove destination MAC from ARP cache
+]]>
+							</Comment>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<Eap InOut="1" Mac="010105040000" ArpRetryInterval="1000">
+						<EapVar Id="51" VarInOut="1" NvId="51" NvLength="1">
+							<Name>net_einbruch_alarm</Name>
+							<Comment>
+								<![CDATA[Alarm in einem Haus ]]>
+							</Comment>
+							<ImageId>97</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Not sent (variable skipped)
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>16</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Disable publishing
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>16</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Alarm in einem Haus ]]>
+									</Comment>
+									<Type>BOOL</Type>
+									<BitOffs>32</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="52" VarInOut="1" NvId="52" NvLength="1">
+							<Name>net_reset_besucher</Name>
+							<Comment>
+								<![CDATA[Zurücksetzen Besucher um 00:00]]>
+							</Comment>
+							<ImageId>97</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Not sent (variable skipped)
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>32</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Disable publishing
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>40</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Zurücksetzen Besucher um 00:00]]>
+									</Comment>
+									<Type>BOOL</Type>
+									<BitOffs>56</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="53" VarInOut="1" NvId="53" NvLength="4">
+							<Name>net_wind</Name>
+							<Comment>
+								<![CDATA[Windstärke]]>
+							</Comment>
+							<ImageId>97</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Not sent (variable skipped)
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>48</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Disable publishing
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>64</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Windstärke]]>
+									</Comment>
+									<Type>REAL</Type>
+									<BitOffs>80</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="54" VarInOut="1" NvId="54" NvLength="4">
+							<Name>net_regen</Name>
+							<Comment>
+								<![CDATA[Regen]]>
+							</Comment>
+							<ImageId>97</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Not sent (variable skipped)
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>64</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Disable publishing
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>112</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Regen]]>
+									</Comment>
+									<Type>REAL</Type>
+									<BitOffs>128</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="55" VarInOut="1" NvId="55" NvLength="4">
+							<Name>net_sonne</Name>
+							<Comment>
+								<![CDATA[Lichtstärke]]>
+							</Comment>
+							<ImageId>97</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Not sent (variable skipped)
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>80</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Disable publishing
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>160</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Lichtstärke]]>
+									</Comment>
+									<Type>REAL</Type>
+									<BitOffs>176</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="56" VarInOut="1" NvId="56" NvLength="2">
+							<Name>net_heizung</Name>
+							<Comment>
+								<![CDATA[Rückgabe Temperatur]]>
+							</Comment>
+							<ImageId>97</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Not sent (variable skipped)
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>96</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Disable publishing
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>208</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Rückgabe Temperatur]]>
+									</Comment>
+									<Type>INT</Type>
+									<BitOffs>224</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+					</Eap>
+				</Box>
+				<Box BoxType="9052" Id="3">
+					<Name>Haus_01</Name>
+					<ImageId>100</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Eingänge</Name>
+						<Var BoxStateVariable="true">
+							<Name>FrameState</Name>
+							<Type>UINT</Type>
+							<BitOffs>112</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Ausgänge</Name>
+						<Var BoxStateVariable="true">
+							<Name>FrameCtrl</Name>
+							<Type>UINT</Type>
+							<BitOffs>240</BitOffs>
+						</Var>
+					</Vars>
+					<Eap Publisher="050ff4c20201">
+						<EapVar Id="1" NvId="1" NvLength="1">
+							<Name>net_licht_01</Name>
+							<Comment>
+								<![CDATA[TRUE - Wenn ein oder mehrere Lichter in Haus 01 brennen]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>128</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>144</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>160</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[TRUE - Wenn ein oder mehrere Lichter in Haus 01 brennen]]>
+									</Comment>
+									<Type>BOOL</Type>
+									<BitOffs>176</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>256</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="4" NvId="4" NvLength="2">
+							<Name>net_besucher_01</Name>
+							<Comment>
+								<![CDATA[Anzahl Besucher Haus 01]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>184</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>200</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>216</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Anzahl Besucher Haus 01]]>
+									</Comment>
+									<Type>INT</Type>
+									<BitOffs>232</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>272</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="7" NvId="7" NvLength="1">
+							<Name>net_alarm_01</Name>
+							<Comment>
+								<![CDATA[TRUE - Wenn Alarm in Haus 01]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>248</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>264</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>280</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[TRUE - Wenn Alarm in Haus 01]]>
+									</Comment>
+									<Type>BOOL</Type>
+									<BitOffs>296</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>288</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="10" NvId="10" NvLength="2">
+							<Name>net_heizung_01</Name>
+							<Comment>
+								<![CDATA[Gewünschte Temperatur in Haus 01 in Grad]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>304</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>320</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>336</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Gewünschte Temperatur in Haus 01 in Grad]]>
+									</Comment>
+									<Type>INT</Type>
+									<BitOffs>352</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>304</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+					</Eap>
+				</Box>
+				<Box BoxType="9052" Id="4">
+					<Name>Haus_02</Name>
+					<ImageId>100</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Eingänge</Name>
+						<Var BoxStateVariable="true">
+							<Name>FrameState</Name>
+							<Type>UINT</Type>
+							<BitOffs>368</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Ausgänge</Name>
+						<Var BoxStateVariable="true">
+							<Name>FrameCtrl</Name>
+							<Type>UINT</Type>
+							<BitOffs>320</BitOffs>
+						</Var>
+					</Vars>
+					<Eap Publisher="050ff4c20201">
+						<EapVar Id="2" NvId="2" NvLength="1">
+							<Name>net_licht_02</Name>
+							<Comment>
+								<![CDATA[TRUE - Wenn ein oder mehrere Lichter in Haus 02 brennen]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>384</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>400</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>416</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[TRUE - Wenn ein oder mehrere Lichter in Haus 02 brennen]]>
+									</Comment>
+									<Type>BOOL</Type>
+									<BitOffs>432</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>336</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="5" NvId="5" NvLength="2">
+							<Name>net_besucher_02</Name>
+							<Comment>
+								<![CDATA[Anzahl Besucher Haus 02]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>440</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>456</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>472</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Anzahl Besucher Haus 02]]>
+									</Comment>
+									<Type>INT</Type>
+									<BitOffs>488</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>352</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="8" NvId="8" NvLength="1">
+							<Name>net_alarm_02</Name>
+							<Comment>
+								<![CDATA[TRUE - Wenn Alarm in Haus 02]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>504</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>520</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>536</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[TRUE - Wenn Alarm in Haus 02]]>
+									</Comment>
+									<Type>BOOL</Type>
+									<BitOffs>552</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>368</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="11" NvId="11" NvLength="2">
+							<Name>net_heizung_02</Name>
+							<Comment>
+								<![CDATA[Gewünschte Temperatur in Haus 02 in Grad]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>560</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>576</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>592</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Gewünschte Temperatur in Haus 02 in Grad]]>
+									</Comment>
+									<Type>INT</Type>
+									<BitOffs>608</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>384</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+					</Eap>
+				</Box>
+				<Box BoxType="9052" Id="5">
+					<Name>Haus_04</Name>
+					<ImageId>100</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Eingänge</Name>
+						<Var BoxStateVariable="true">
+							<Name>FrameState</Name>
+							<Type>UINT</Type>
+							<BitOffs>624</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Ausgänge</Name>
+						<Var BoxStateVariable="true">
+							<Name>FrameCtrl</Name>
+							<Type>UINT</Type>
+							<BitOffs>400</BitOffs>
+						</Var>
+					</Vars>
+					<Eap Publisher="050ff4c20201" Mac="010105040000">
+						<EapVar Id="3" NvId="3" NvLength="1">
+							<Name>net_licht_04</Name>
+							<Comment>
+								<![CDATA[TRUE - Wenn ein oder mehrere Lichter in Haus 04 brennen]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>640</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>656</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>672</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[TRUE - Wenn ein oder mehrere Lichter in Haus 04 brennen]]>
+									</Comment>
+									<Type>BOOL</Type>
+									<BitOffs>688</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>416</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="6" NvId="6" NvLength="2">
+							<Name>net_besucher_04</Name>
+							<Comment>
+								<![CDATA[Anzahl Besucher Haus 04]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>696</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>712</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>728</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Anzahl Besucher Haus 04]]>
+									</Comment>
+									<Type>INT</Type>
+									<BitOffs>744</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>432</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="9" NvId="9" NvLength="1">
+							<Name>net_alarm_04</Name>
+							<Comment>
+								<![CDATA[TRUE - Wenn Alarm in Haus 04]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>760</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>776</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>792</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[TRUE - Wenn Alarm in Haus 04]]>
+									</Comment>
+									<Type>BOOL</Type>
+									<BitOffs>808</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>448</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="12" NvId="12" NvLength="2">
+							<Name>net_heizung_04</Name>
+							<Comment>
+								<![CDATA[Gewünschte Temperatur in Haus 04 in Grad]]>
+							</Comment>
+							<ImageId>98</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>816</BitOffs>
+								</Var>
+								<Var>
+									<Name>Quality</Name>
+									<Comment>
+										<![CDATA[Duration the variable is not refreshed (in 100µs)]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>832</BitOffs>
+								</Var>
+								<Var>
+									<Name>CycleIndex</Name>
+									<Comment>
+										<![CDATA[Incremented each publisher cycle]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>848</BitOffs>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Gewünschte Temperatur in Haus 04 in Grad]]>
+									</Comment>
+									<Type>INT</Type>
+									<BitOffs>864</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Ignore hash value
+]]>
+									</Comment>
+									<Type>UINT</Type>
+									<BitOffs>464</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+					</Eap>
+				</Box>
+				<Ethernet DeviceDesc="Local Area Connection 2 (TwinCAT-Intel PCI Ethernet Adapter (Gigabit) #2)"/>
+				<Eap EapDeviceGuid="{60A481E8-115A-4533-9AE8-419E66E3F16A}"/>
+			</Device>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-0011-0101-1000-010110000403}" Id="#x03070010"/>
+		<OwnerA Name="TIPC^Server^Server Instance">
+			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Haus_01">
+				<Link VarA="PlcTask Inputs^Netzwerk.net_alarm_01" VarB="net_alarm_01^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_besucher_01" VarB="net_besucher_01^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_heizung_01" VarB="net_heizung_01^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_licht_01" VarB="net_licht_01^Inputs^VarData"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Haus_02">
+				<Link VarA="PlcTask Inputs^Netzwerk.net_alarm_02" VarB="net_alarm_02^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_besucher_02" VarB="net_besucher_02^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_heizung_02" VarB="net_heizung_02^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_licht_02" VarB="net_licht_02^Inputs^VarData"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Haus_04">
+				<Link VarA="PlcTask Inputs^Netzwerk.net_alarm_04" VarB="net_alarm_04^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_besucher_04" VarB="net_besucher_04^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_heizung_04" VarB="net_heizung_04^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_licht_04" VarB="net_licht_04^Inputs^VarData"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Server (Publisher)">
+				<Link VarA="PlcTask Outputs^Netzwerk.net_einbruch_alarm" VarB="net_einbruch_alarm^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_heizung_out" VarB="net_heizung^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_regen" VarB="net_regen^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_reset_besucher" VarB="net_reset_besucher^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_sonne" VarB="net_sonne^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_wind" VarB="net_wind^Outputs^VarData"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmProject>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="Alarm" Id="{572deef5-61f9-4ec5-93f6-0c170029445b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Alarm
+VAR_INPUT
+	AL_H1 : BOOL;	
+	AL_H1_V : BOOL;
+	AL_H2 : BOOL;
+	AL_H2_V : BOOL;
+	AL_H4 : BOOL;
+	AL_H4_V : BOOL;
+	T_Alarm : TIME;
+END_VAR
+VAR_OUTPUT
+	GL_Alarm : BOOL;
+END_VAR
+VAR
+	has_Alarm : BOOL;
+	Alarm_On : TOF;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[has_Alarm := 
+	AL_H1 OR 
+	AL_H2 OR 
+	AL_H4 OR 
+	AL_H1_V OR 
+	AL_H2_V OR 
+	AL_H4_V;
+	
+Alarm_On(IN := has_Alarm, PT := T_Alarm);
+GL_Alarm := Alarm_On.Q;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
