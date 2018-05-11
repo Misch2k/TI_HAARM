@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="TIME_TRIG" Id="{6e8e82a4-ec2d-48ff-8222-3b45d8942337}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TIME_TRIG
+VAR_INPUT
+	_val : INT;
+END_VAR
+VAR_OUTPUT
+	_Q : BOOL;
+END_VAR
+VAR
+	History : INT;
+	first : BOOL := TRUE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF first THEN
+	History := _val;
+	first := FALSE;
+ELSE
+	IF History <> _val THEN
+		_Q := TRUE;
+		History := _val;
+	ELSIF _Q THEN
+		_Q := FALSE;	
+	END_IF
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="GET_TIME" Id="{bb5674fd-d75b-4ee4-98a6-a3eb28e11c50}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK GET_TIME
+VAR_INPUT
+	_speed : INT;
+END_VAR
+VAR_OUTPUT
+	_ms_count : UDINT;
+	_ms : INT;
+	_s : INT;
+	_m : INT;
+	_h : INT;
+	_days : INT;
+END_VAR
+VAR
+	systemTime : GETSYSTEMTIME;
+	tmp : INT;
+	temp1 : DT;
+	firstH : BOOL := TRUE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[systemTime();
+_ms_count := systemTime.timeLoDW / 10000;
+_ms_count := LREAL_TO_UDINT(_ms_count * EXPT(10, _speed));
+_ms := UDINT_TO_INT(_ms_count MOD 1000);
+_s := UDINT_TO_INT((_ms_count / 1000) MOD 60);
+_m := UDINT_TO_INT((_ms_count / 6000) MOD 60);
+_h := UDINT_TO_INT(((_ms_count / 360000) MOD 24));
+IF _h MOD 24 = 0 THEN
+	IF firstH THEN
+		_days := _days + 1;
+		firstH := FALSE;
+	END_IF
+ELSE
+	firstH := TRUE;
+END_IF
+
+
+temp1 := LINT_TO_DT(_ms_count / 1000 + systemTime.timeHiDW * 50 - 7171200);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

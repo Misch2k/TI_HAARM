@@ -1,10 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5" FileSignature="43b5bd7302047cbc4647246b4a3c423320e60ec99b29a1cbc5dc9bc9e3beb3f287962e48b0b85e8698dcc472b8d8582c733bd6ae54cfbee2bc1555a5650b828075e38512ef566ca2ccf8527beda4126751a2b082537abc03ff159d52930b99cd26b290a7681a2eead7ce67002b21b789365ebe4370e7e59fa0855cd5d2c3d76c213e508a017b6cbb06c15b447df01b5cbc8ac3eeb76024f59caab5a6b79c39f4068bd1cb15e37279ec8fe75b06698a455583d0e943c1e4bbb62f0f6e37f6692db6bf8da97a01d92f9a2088cfb2652e0611c7a4ff5de0d9252872f97939c4e8797db944d6c5233a98e6653cc3b0a2e70fe39092e4be07f7cf0e682df3aae5f844">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
   <GlobalTextList Name="GlobalTextList" Id="{d2b33114-9967-4a2a-bacf-2d53ed514859}">
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalTextListObject">
-          <l n="TextList" t="ArrayList" />
+          <l n="TextList" t="ArrayList" cet="TextListRow">
+            <o>
+              <v n="TextID">"1"</v>
+              <v n="TextDefault">"%2f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"2"</v>
+              <v n="TextDefault">"%2i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"4"</v>
+              <v n="TextDefault">"%2i : "</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"3"</v>
+              <v n="TextDefault">"%2i : %2i : %2i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"5"</v>
+              <v n="TextDefault">"%i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"0"</v>
+              <v n="TextDefault">"Zeit Manipulation"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+          </l>
           <l n="Languages" t="ArrayList" />
           <v n="GuidInit">{c1988381-9533-4c54-8a08-1d719f083d4d}</v>
           <v n="GuidReInit">{722df366-a69f-44af-a8fe-006d51491bdb}</v>
@@ -15,6 +46,8 @@
         <Type n="ArrayList">System.Collections.ArrayList</Type>
         <Type n="GlobalTextListObject">{63784cbb-9ba0-45e6-9d69-babf3f040511}</Type>
         <Type n="Guid">System.Guid</Type>
+        <Type n="String">System.String</Type>
+        <Type n="TextListRow">{53da1be7-ad25-47c3-b0e8-e26286dad2e0}</Type>
       </TypeList>
     </XmlArchive>
   </GlobalTextList>

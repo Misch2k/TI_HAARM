@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4018.26">
-	<Project ProjectGUID="{42E92A3F-A165-4FB5-8D6F-5776CEB04310}" TargetNetId="5.15.244.186.1.1">
+	<Project ProjectGUID="{42E92A3F-A165-4FB5-8D6F-5776CEB04310}" Target64Bit="true">
 		<System>
-			<Settings MaxCpus="2" NonWinCpus="1"/>
+			<Settings MaxCpus="4" NonWinCpus="1">
+				<Cpu CpuId="3"/>
+			</Settings>
 			<Tasks>
 				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
 					<Name>PlcTask</Name>
@@ -17,85 +19,85 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>GVL.net_licht_01</Name>
+							<Name>Netzwerk.net_licht_01</Name>
 							<Comment>
 								<![CDATA[ Eingänge]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_licht_02</Name>
+							<Name>Netzwerk.net_licht_02</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_licht_04</Name>
+							<Name>Netzwerk.net_licht_04</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_alarm_01</Name>
+							<Name>Netzwerk.net_alarm_01</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_besucher_01</Name>
+							<Name>Netzwerk.net_besucher_01</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_besucher_02</Name>
+							<Name>Netzwerk.net_besucher_02</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_besucher_04</Name>
+							<Name>Netzwerk.net_besucher_04</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_alarm_02</Name>
+							<Name>Netzwerk.net_alarm_02</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_alarm_04</Name>
+							<Name>Netzwerk.net_alarm_04</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_heizung_01</Name>
+							<Name>Netzwerk.net_heizung_01</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_heizung_02</Name>
+							<Name>Netzwerk.net_heizung_02</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_heizung_04</Name>
+							<Name>Netzwerk.net_heizung_04</Name>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>GVL.net_einbruch_alarm</Name>
+							<Name>Netzwerk.net_einbruch_alarm</Name>
 							<Comment>
 								<![CDATA[ Ausgänge]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_reset_besucher</Name>
+							<Name>Netzwerk.net_reset_besucher</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.net_wind</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.net_regen</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.net_sonne</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.net_heizung_out</Name>
+							<Name>Netzwerk.net_heizung_out</Name>
 							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_wind</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_regen</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_sonne</Name>
+							<Type>REAL</Type>
 						</Var>
 					</Vars>
 					<TaskPouOids>
@@ -105,7 +107,7 @@
 			</Project>
 		</Plc>
 		<Io>
-			<Device DevType="112" AmsPort="28673" AmsNetId="5.15.244.186.2.1" RemoteName="Netzvariablen (EtherCAT Automation Protocol)" Id="1">
+			<Device Disabled="true" DevType="112" AmsPort="28673" AmsNetId="192.168.252.131.2.1" RemoteName="Netzvariablen (EtherCAT Automation Protocol)" Id="1">
 				<Name>Netzvariablen (EtherCAT Automation Protocol)</Name>
 				<AddressInfo>
 					<Pnp>
@@ -1126,33 +1128,32 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-0011-0101-1000-010110000403}" Id="#x03070010"/>
 		<OwnerA Name="TIPC^Server^Server Instance">
 			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Haus_01">
-				<Link VarA="PlcTask Inputs^GVL.net_alarm_01" VarB="net_alarm_01^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_besucher_01" VarB="net_besucher_01^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_heizung_01" VarB="net_heizung_01^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_licht_01" VarB="net_licht_01^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_alarm_01" VarB="net_alarm_01^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_besucher_01" VarB="net_besucher_01^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_heizung_01" VarB="net_heizung_01^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_licht_01" VarB="net_licht_01^Inputs^VarData"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Haus_02">
-				<Link VarA="PlcTask Inputs^GVL.net_alarm_02" VarB="net_alarm_02^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_besucher_02" VarB="net_besucher_02^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_heizung_02" VarB="net_heizung_02^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_licht_02" VarB="net_licht_02^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_alarm_02" VarB="net_alarm_02^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_besucher_02" VarB="net_besucher_02^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_heizung_02" VarB="net_heizung_02^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_licht_02" VarB="net_licht_02^Inputs^VarData"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Haus_04">
-				<Link VarA="PlcTask Inputs^GVL.net_alarm_04" VarB="net_alarm_04^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_besucher_04" VarB="net_besucher_04^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_heizung_04" VarB="net_heizung_04^Inputs^VarData"/>
-				<Link VarA="PlcTask Inputs^GVL.net_licht_04" VarB="net_licht_04^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_alarm_04" VarB="net_alarm_04^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_besucher_04" VarB="net_besucher_04^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_heizung_04" VarB="net_heizung_04^Inputs^VarData"/>
+				<Link VarA="PlcTask Inputs^Netzwerk.net_licht_04" VarB="net_licht_04^Inputs^VarData"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Server (Publisher)">
-				<Link VarA="PlcTask Outputs^GVL.net_einbruch_alarm" VarB="net_einbruch_alarm^Outputs^VarData"/>
-				<Link VarA="PlcTask Outputs^GVL.net_heizung_out" VarB="net_heizung^Outputs^VarData"/>
-				<Link VarA="PlcTask Outputs^GVL.net_regen" VarB="net_regen^Outputs^VarData"/>
-				<Link VarA="PlcTask Outputs^GVL.net_reset_besucher" VarB="net_reset_besucher^Outputs^VarData"/>
-				<Link VarA="PlcTask Outputs^GVL.net_sonne" VarB="net_sonne^Outputs^VarData"/>
-				<Link VarA="PlcTask Outputs^GVL.net_wind" VarB="net_wind^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_einbruch_alarm" VarB="net_einbruch_alarm^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_heizung_out" VarB="net_heizung^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_regen" VarB="net_regen^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_reset_besucher" VarB="net_reset_besucher^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_sonne" VarB="net_sonne^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_wind" VarB="net_wind^Outputs^VarData"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

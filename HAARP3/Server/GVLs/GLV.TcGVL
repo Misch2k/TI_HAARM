@@ -1,10 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
   <GVL Name="GLV" Id="{c31a6ed1-0cc1-4413-898e-fee65ad43a73}">
-    <Declaration><![CDATA[VAR_GLOBAL
+    <Declaration><![CDATA[VAR_GLOBAL CONSTANT 
+	_history : INT := 50;
+END_VAR
+
+VAR_GLOBAL
 	AL_H1_V : BOOL;
 	AL_H2_V : BOOL;
 	AL_H4_V : BOOL;
-END_VAR]]></Declaration>
+	
+	Licht : INT;
+	Zeit_Multiplikator : INT;
+	Sin_manipulator : INT := 1;
+	
+	_msCount : UDINT;
+	_mSekunde : INT;
+	_sekunde : INT;
+	_minute : INT;
+	_stunde : INT;
+	day : INT;
+	
+	testData : ARRAY [0.._history] OF INT;
+END_VAR
+]]></Declaration>
   </GVL>
 </TcPlcObject>
