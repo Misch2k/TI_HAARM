@@ -11,6 +11,7 @@ VAR_GLOBAL
 	AL_H4_V : BOOL;
 	
 	Licht : INT;
+	Regen : BOOL;
 	Zeit_Multiplikator : INT;
 	Sin_manipulator : INT := 0;
 	

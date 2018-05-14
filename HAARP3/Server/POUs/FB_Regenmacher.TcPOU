@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="FB_Regenmacher" Id="{99d2faf6-030f-4b4c-bec5-8928d229cc43}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Regenmacher
+VAR_INPUT
+	_gen : BOOL;
+	_m : INT;
+	_h : INT;
+	_day : INT;
+	_percent : INT;
+END_VAR
+VAR_OUTPUT
+	_rain : BOOL;
+END_VAR
+VAR
+	dayTrig : INT_R_TRIG;
+	RAND_H : DRAND;
+	RAND_M : DRAND;
+	RAND_D : DRAND;
+	rainToday : BOOL;
+	rainHour : INT;
+	rainMinute : INT;
+	rainDuration : INT;
+	rainTill_h : INT;
+	rainTill_m : INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF _gen THEN
+	dayTrig(_val := _day);
+	
+	IF dayTrig._Q THEN
+		_rain := FALSE;
+		rainToday := FALSE;
+		RAND_H(Seed := 0);
+		rainToday := LREAL_TO_INT(RAND_H.Num * 100) < _percent;
+		
+		IF rainToday THEN
+			RAND_M(Seed := 1);
+			RAND_D(Seed := 2);
+			rainHour := LREAL_TO_INT(RAND_H.Num * 12);
+			rainMinute := LREAL_TO_INT(RAND_M.Num * 59);
+			rainDuration := LREAL_TO_INT(RAND_D.Num * 480);
+			rainTill_h := rainHour + (rainDuration / 60);
+			rainTill_m := rainMinute + (rainDuration - ((rainTill_h - rainHour) * 60));
+			IF rainTill_m > 60 THEN
+				rainTill_h := rainTill_h + 1;
+				rainTill_m := rainTill_m - 60;
+			END_IF
+		END_IF
+	END_IF
+	
+	IF rainToday THEN
+		IF rainHour < _h OR (rainHour = _h AND rainMinute <= _m) THEN
+			_rain := TRUE;
+			IF rainTill_h <= _h AND rainTill_m <= _m THEN
+				_rain := FALSE;
+				rainToday := FALSE;
+			END_IF
+		END_IF
+	END_IF
+ELSE
+	_rain := FALSE;
+	rainToday := FALSE;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

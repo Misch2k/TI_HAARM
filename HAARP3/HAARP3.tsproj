@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4018.26">
-	<Project ProjectGUID="{42E92A3F-A165-4FB5-8D6F-5776CEB04310}" Target64Bit="true">
+	<Project ProjectGUID="{42E92A3F-A165-4FB5-8D6F-5776CEB04310}" TargetNetId="5.15.244.194.1.1">
 		<System>
-			<Settings MaxCpus="4" NonWinCpus="1">
-				<Cpu CpuId="3"/>
+			<Settings MaxCpus="2" NonWinCpus="1">
+				<Cpu CpuId="1"/>
 			</Settings>
 			<Tasks>
 				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
@@ -107,13 +107,13 @@
 			</Project>
 		</Plc>
 		<Io>
-			<Device Disabled="true" DevType="112" AmsPort="28673" AmsNetId="192.168.252.131.2.1" RemoteName="Netzvariablen (EtherCAT Automation Protocol)" Id="1">
+			<Device DevType="112" AmsPort="28673" AmsNetId="5.15.244.194.2.1" RemoteName="Netzvariablen (EtherCAT Automation Protocol)" Id="1">
 				<Name>Netzvariablen (EtherCAT Automation Protocol)</Name>
 				<AddressInfo>
 					<Pnp>
 						<DeviceDesc>Local Area Connection 2 (TwinCAT-Intel PCI Ethernet</DeviceDesc>
 						<DeviceName>\DEVICE\{DE2EE752-525C-46A5-8DE6-E419EE2F6FD9}</DeviceName>
-						<DeviceData>0001050ff4ba</DeviceData>
+						<DeviceData>0001050ff4c2</DeviceData>
 					</Pnp>
 				</AddressInfo>
 				<Image Id="1" AddrType="1" ImageType="3">
@@ -147,7 +147,7 @@
 							<Type>UINT</Type>
 						</Var>
 					</Vars>
-					<Eap InOut="1" Mac="010105040000" ArpRetryInterval="1000">
+					<Eap InOut="1" Publisher="00ff7fe00000" NetIdPublisherAsIpAddress="true" ArpRetryInterval="1000">
 						<EapVar Id="51" VarInOut="1" NvId="51" NvLength="1">
 							<Name>net_einbruch_alarm</Name>
 							<Comment>
@@ -403,7 +403,7 @@
 							<BitOffs>240</BitOffs>
 						</Var>
 					</Vars>
-					<Eap Publisher="050ff4c20201">
+					<Eap>
 						<EapVar Id="1" NvId="1" NvLength="1">
 							<Name>net_licht_01</Name>
 							<Comment>
@@ -1128,6 +1128,7 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-0011-0101-1000-010110000403}" Id="#x03070010"/>
 		<OwnerA Name="TIPC^Server^Server Instance">
 			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Haus_01">
 				<Link VarA="PlcTask Inputs^Netzwerk.net_alarm_01" VarB="net_alarm_01^Inputs^VarData"/>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
-  <POU Name="WORD_TRIG" Id="{6e8e82a4-ec2d-48ff-8222-3b45d8942337}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK WORD_TRIG
+  <POU Name="INT_R_TRIG" Id="{fd892fb2-199a-4a92-9949-666a3f46d169}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK INT_R_TRIG
 VAR_INPUT
 	_val : INT;
 END_VAR
@@ -18,7 +18,7 @@ END_VAR
 	History := _val;
 	first := FALSE;
 ELSE
-	IF History <> _val THEN
+	IF History < _val THEN
 		_Q := TRUE;
 		History := _val;
 	ELSIF _Q THEN

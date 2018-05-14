@@ -8,7 +8,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[PG_Time();
 PG_Alarm();
-PG_Calculate_Sun();]]></ST>
+PG_Calculate_Sun();
+PG_Rain();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

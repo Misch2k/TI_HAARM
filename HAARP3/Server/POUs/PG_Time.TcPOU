@@ -754,7 +754,7 @@ END_VAR
                         <v n="X">22</v>
                         <v n="Y">20</v>
                         <v n="IsJoint">false</v>
-                        <v n="Flags">100</v>
+                        <v n="Flags">68</v>
                       </o>
                       <o>
                         <v n="X">24</v>
@@ -1075,8 +1075,8 @@ END_VAR
                 </d2>
               </o>
               <v n="AutoSizeCanvas">true</v>
-              <v n="CanvasWidth">33</v>
-              <v n="CanvasHeight">22</v>
+              <v n="CanvasWidth">34</v>
+              <v n="CanvasHeight">23</v>
             </o>
           </Data>
           <TypeList>
