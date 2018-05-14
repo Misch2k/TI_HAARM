@@ -6,7 +6,7 @@ VAR_INPUT
 	_speed : INT;
 END_VAR
 VAR_OUTPUT
-	_ms_count : UDINT;
+	_prog : REAL;
 	_ms : INT;
 	_s : INT;
 	_m : INT;
@@ -15,19 +15,19 @@ VAR_OUTPUT
 END_VAR
 VAR
 	systemTime : GETSYSTEMTIME;
-	tmp : INT;
-	temp1 : DT;
 	firstH : BOOL := TRUE;
+	ms_count : UDINT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[systemTime();
-_ms_count := systemTime.timeLoDW / 10000;
-_ms_count := LREAL_TO_UDINT(_ms_count * EXPT(10, _speed));
-_ms := UDINT_TO_INT(_ms_count MOD 1000);
-_s := UDINT_TO_INT((_ms_count / 1000) MOD 60);
-_m := UDINT_TO_INT((_ms_count / 6000) MOD 60);
-_h := UDINT_TO_INT(((_ms_count / 360000) MOD 24));
+ms_count := systemTime.timeLoDW / 10000;
+ms_count := ms_count * LREAL_TO_UDINT(EXPT(10, _speed));
+_ms := UDINT_TO_INT(ms_count MOD 1000);
+_s := UDINT_TO_INT((ms_count / 1000) MOD 60);
+_m := UDINT_TO_INT((ms_count / 6000) MOD 60);
+_h := UDINT_TO_INT(((ms_count / 360000) MOD 24));
+_prog := 360 * DINT_TO_REAL(_h * 360000 + _m * 6000 + _s * 1000 + _ms) / UDINT_TO_REAL(24 * 360000);
 IF _h MOD 24 = 0 THEN
 	IF firstH THEN
 		_days := _days + 1;
@@ -35,11 +35,7 @@ IF _h MOD 24 = 0 THEN
 	END_IF
 ELSE
 	firstH := TRUE;
-END_IF
-
-
-temp1 := LINT_TO_DT(_ms_count / 1000 + systemTime.timeHiDW * 50 - 7171200);
-]]></ST>
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

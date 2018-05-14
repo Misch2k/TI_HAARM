@@ -34,10 +34,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>Netzwerk.net_alarm_01</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>Netzwerk.net_besucher_01</Name>
 							<Type>INT</Type>
 						</Var>
@@ -48,6 +44,10 @@
 						<Var>
 							<Name>Netzwerk.net_besucher_04</Name>
 							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_alarm_01</Name>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_alarm_02</Name>
@@ -84,10 +84,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>Netzwerk.net_heizung_out</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>Netzwerk.net_wind</Name>
 							<Type>REAL</Type>
 						</Var>
@@ -98,6 +94,10 @@
 						<Var>
 							<Name>Netzwerk.net_sonne</Name>
 							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_heizung_out</Name>
+							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<TaskPouOids>

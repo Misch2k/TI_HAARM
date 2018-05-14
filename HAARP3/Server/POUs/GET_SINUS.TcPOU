@@ -5,37 +5,23 @@
 VAR_INPUT
 	_min : INT;
 	_max : INT;
-	_val : UDINT;
+	_val : LREAL;
 	_do : BOOL;
-	_manip : INT;
 END_VAR
 VAR_OUTPUT
 	_sin : INT;
 END_VAR
 VAR
-	count : REAL;
-	diff : REAL;
+	diff : INT;
 	average : INT;
-	save : INT;
-	last : UDINT;
-	first : BOOL;
+	save : INT := 0;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF first THEN
-	last := _val;
-	first := FALSE;
-END_IF
-
-IF _do THEN
-	count := count + UDINT_TO_REAL(_val - last) / _manip;
+      <ST><![CDATA[IF _do THEN
 	diff := (_max - _min) / 2;
 	average := REAL_TO_INT(_min + diff);
-	save := REAL_TO_INT(LREAL_TO_REAL(SIN(count) * diff + average));
-	last := _val;
-	IF count > 100000 THEN
-		count := 0;
-	END_IF
+	save := LREAL_TO_INT(SIN(_val) * diff + average);
 END_IF
 _sin := save;]]></ST>
     </Implementation>

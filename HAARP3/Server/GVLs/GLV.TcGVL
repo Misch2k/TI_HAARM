@@ -12,14 +12,21 @@ VAR_GLOBAL
 	
 	Licht : INT;
 	Zeit_Multiplikator : INT;
-	Sin_manipulator : INT := 1;
+	Sin_manipulator : INT := 0;
 	
-	_msCount : UDINT;
+	_dayProgress : REAL;
 	_mSekunde : INT;
 	_sekunde : INT;
 	_minute : INT;
 	_stunde : INT;
+	
+	_RmSekunde : INT;
+	_Rsekunde : INT;
+	_Rminute : INT;
+	_Rstunde : INT;
+	
 	day : INT;
+	_Rday : INT;
 	
 	testData : ARRAY [0.._history] OF INT;
 END_VAR
