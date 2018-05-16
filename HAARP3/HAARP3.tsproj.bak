@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4018.26">
-	<Project ProjectGUID="{42E92A3F-A165-4FB5-8D6F-5776CEB04310}" TargetNetId="5.15.244.194.1.1">
+	<Project ProjectGUID="{42E92A3F-A165-4FB5-8D6F-5776CEB04310}" Target64Bit="true">
 		<System>
-			<Settings MaxCpus="2" NonWinCpus="1">
-				<Cpu CpuId="1"/>
+			<Settings MaxCpus="4" NonWinCpus="1">
+				<Cpu CpuId="3"/>
 			</Settings>
 			<Tasks>
 				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
@@ -34,6 +34,10 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>Netzwerk.net_alarm_01</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>Netzwerk.net_besucher_01</Name>
 							<Type>INT</Type>
 						</Var>
@@ -44,10 +48,6 @@
 						<Var>
 							<Name>Netzwerk.net_besucher_04</Name>
 							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>Netzwerk.net_alarm_01</Name>
-							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_alarm_02</Name>
@@ -84,10 +84,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>Netzwerk.net_heizung_out</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>Netzwerk.net_wind</Name>
 							<Type>REAL</Type>
 						</Var>
@@ -99,6 +95,10 @@
 							<Name>Netzwerk.net_sonne</Name>
 							<Type>REAL</Type>
 						</Var>
+						<Var>
+							<Name>Netzwerk.net_heizung_out</Name>
+							<Type>INT</Type>
+						</Var>
 					</Vars>
 					<TaskPouOids>
 						<TaskPouOid Prio="20" OTCID="#x01010011"/>
@@ -107,7 +107,7 @@
 			</Project>
 		</Plc>
 		<Io>
-			<Device DevType="112" AmsPort="28673" AmsNetId="5.15.244.194.2.1" RemoteName="Netzvariablen (EtherCAT Automation Protocol)" Id="1">
+			<Device Disabled="true" DevType="112" AmsPort="28673" AmsNetId="192.168.252.131.2.1" RemoteName="Netzvariablen (EtherCAT Automation Protocol)" Id="1">
 				<Name>Netzvariablen (EtherCAT Automation Protocol)</Name>
 				<AddressInfo>
 					<Pnp>
@@ -1128,7 +1128,6 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-0011-0101-1000-010110000403}" Id="#x03070010"/>
 		<OwnerA Name="TIPC^Server^Server Instance">
 			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Haus_01">
 				<Link VarA="PlcTask Inputs^Netzwerk.net_alarm_01" VarB="net_alarm_01^Inputs^VarData"/>

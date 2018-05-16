@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="Visu_DayNight" Id="{881d9727-d293-47d2-9885-3ed1be4a1ac8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Visu_DayNight
+VAR CONSTANT
+	Fix_Degree : INT := -90;
+END_VAR
+VAR_INPUT
+	_deg : REAL;
+	_licht : INT;
+	_Licht_min : INT;
+	_Licht_max : INT;
+END_VAR
+VAR_OUTPUT
+	_day : STRING;
+	_stand : INT;
+	_sun : DWORD;
+END_VAR
+VAR
+	timeProg : REAL;
+	transparency : INT := 255;
+	color : STRING;
+	HEX : STRING;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[timeProg := _deg + Fix_Degree;
+IF timeProg < 0 OR timeProg > 180 THEN
+	_stand := REAL_TO_INT(timeProg + 180);
+	_day := 'Mond';
+ELSE
+	_day := 'Sonne';
+	_stand := REAL_TO_INT(timeProg);
+END_IF
+
+transparency := REAL_TO_INT( ((_Licht - _Licht_min) / INT_TO_REAL(_Licht_max - _Licht_min)) * 255 );
+
+HEX := DWORD_TO_HEXSTR(INT_TO_UINT(transparency), 2, FALSE);
+
+color := '16#';
+color := CONCAT(color, HEX);
+color := CONCAT(color, 'FFFF00');
+
+_sun := STRING_TO_DWORD(color);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

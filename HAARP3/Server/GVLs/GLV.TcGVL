@@ -3,6 +3,8 @@
   <GVL Name="GLV" Id="{c31a6ed1-0cc1-4413-898e-fee65ad43a73}">
     <Declaration><![CDATA[VAR_GLOBAL CONSTANT 
 	_history : INT := 50;
+	_Licht_min : INT := 100;
+	_Licht_max : INT := 2500;
 END_VAR
 
 VAR_GLOBAL
@@ -30,6 +32,13 @@ VAR_GLOBAL
 	_Rday : INT;
 	
 	testData : ARRAY [0.._history] OF INT;
+	
+	L_Licht : BOOL;
+	L_Baum : INT;
+	L_Sonnenstand : INT;
+	L_Sonne : STRING;
+	L_Background : DWORD := 16#FFFFFF00;
+	L_Background2 : DWORD;
 END_VAR
 ]]></Declaration>
   </GVL>

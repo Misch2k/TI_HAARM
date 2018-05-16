@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="Visu_Baum" Id="{7da518bd-ee7c-461f-9de0-4d2bc71bb7fb}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Visu_Baum
+VAR_INPUT
+_rotate : BOOL;	
+_speed : INT;
+_minDeg : INT := -90;
+_maxDeg : INT := 90;
+END_VAR
+VAR_OUTPUT
+	_rot : INT := 0;
+END_VAR
+VAR
+	counter : INT;
+	rotateRight : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF _rotate THEN
+	IF rotateRight THEN
+		IF _rot > _maxDeg THEN
+			rotateRight := FALSE;
+		ELSE
+			_rot := _rot + _speed;
+		END_IF
+	ELSE
+		IF _rot < _minDeg THEN
+			rotateRight := TRUE;
+		ELSE
+			_rot := _rot - _speed;
+		END_IF
+	END_IF
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

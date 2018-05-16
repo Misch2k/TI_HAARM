@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <ImagePool Name="ImagePool" Id="{41487b79-efa5-4382-b4c3-91de283f4252}">
+    <XmlArchive>
+      <Data>
+        <o xml:space="preserve" t="ImagePoolObject">
+          <v n="UniqueIdGenerator">"25"</v>
+          <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
+            <o>
+              <v n="BitmapID">"Baum_einzeln"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Baum_einzeln.png"</v>
+              <v n="ItemID">1</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Baeume"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Baeume.png"</v>
+              <v n="ItemID">2</v>
+            </o>
+            <o>
+              <v n="BitmapID">"BaumLinks"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\BaumLinks.png"</v>
+              <v n="ItemID">8</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Dunkel"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Dunkel.png"</v>
+              <v n="ItemID">10</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Haus"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Haus.png"</v>
+              <v n="ItemID">12</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Licht"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Licht.png"</v>
+              <v n="ItemID">14</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Stamm"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Stamm.png"</v>
+              <v n="ItemID">16</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Krone"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Krone.png"</v>
+              <v n="ItemID">18</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Sonne"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Sonne.png"</v>
+              <v n="ItemID">20</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Mond"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Mond.png"</v>
+              <v n="ItemID">22</v>
+            </o>
+            <o>
+              <v n="BitmapID">""</v>
+              <v n="FileID">""</v>
+              <v n="ItemID">24</v>
+            </o>
+          </l>
+          <v n="GuidInit">{42798028-d813-4699-bcb3-3dd63cb8ff6f}</v>
+          <v n="GuidReInit">{c6cfea87-c52f-4c64-a957-c6655f7dee3f}</v>
+          <v n="GuidExitX">{87d7193e-282c-49a4-b3cf-d597ba3bff92}</v>
+          <v n="ValidIds">false</v>
+        </o>
+      </Data>
+      <TypeList>
+        <Type n="ArrayList">System.Collections.ArrayList</Type>
+        <Type n="Boolean">System.Boolean</Type>
+        <Type n="Guid">System.Guid</Type>
+        <Type n="ImagePoolItem">{215b2719-0347-4e4d-ba85-8bcd66946f66}</Type>
+        <Type n="ImagePoolObject">{bb0b9044-714e-4614-ad3e-33cbdf34d16b}</Type>
+        <Type n="Int32">System.Int32</Type>
+        <Type n="String">System.String</Type>
+      </TypeList>
+    </XmlArchive>
+  </ImagePool>
+</TcPlcObject>
