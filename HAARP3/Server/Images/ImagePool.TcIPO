@@ -7,21 +7,6 @@
           <v n="UniqueIdGenerator">"25"</v>
           <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
             <o>
-              <v n="BitmapID">"Baum_einzeln"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Baum_einzeln.png"</v>
-              <v n="ItemID">1</v>
-            </o>
-            <o>
-              <v n="BitmapID">"Baeume"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Baeume.png"</v>
-              <v n="ItemID">2</v>
-            </o>
-            <o>
-              <v n="BitmapID">"BaumLinks"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\BaumLinks.png"</v>
-              <v n="ItemID">8</v>
-            </o>
-            <o>
               <v n="BitmapID">"Dunkel"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Dunkel.png"</v>
               <v n="ItemID">10</v>
