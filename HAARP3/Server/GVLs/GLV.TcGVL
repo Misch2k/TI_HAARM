@@ -1,13 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
   <GVL Name="GLV" Id="{c31a6ed1-0cc1-4413-898e-fee65ad43a73}">
-    <Declaration><![CDATA[VAR_GLOBAL CONSTANT 
-	_history : INT := 50;
-	_Licht_min : INT := 100;
-	_Licht_max : INT := 2500;
-END_VAR
-
-VAR_GLOBAL
+    <Declaration><![CDATA[VAR_GLOBAL
 	AL_H1_V : BOOL;
 	AL_H2_V : BOOL;
 	AL_H4_V : BOOL;
@@ -15,8 +9,8 @@ VAR_GLOBAL
 	Licht : INT;
 	Regen : BOOL;
 	Zeit_Multiplikator : INT;
-	Sin_manipulator : INT := 0;
-	
+	Sin_manipulator : INT := Sin_Manipulator_STD;
+
 	_dayProgress : REAL;
 	_mSekunde : INT;
 	_sekunde : INT;
@@ -33,12 +27,17 @@ VAR_GLOBAL
 	
 	testData : ARRAY [0.._history] OF INT;
 	
-	L_Licht : BOOL;
-	L_Baum : INT;
 	L_Sonnenstand : INT;
 	L_Sonne : STRING;
-	L_Background : DWORD := 16#FFFFFF00;
-	L_Background2 : DWORD;
+	L_Himmel : DWORD;
+	L_Baum : INT;
+	
+	GL_Besucher : INT;
+	GL_Besucher_reset : BOOL;
+	GL_Alarm_reset : BOOL;
+	GL_Besucher_reset_A : BOOL;
+	
+	Regenwahrscheinlichkeit : INT := Regenwahrscheinlichkeit_STD;
 END_VAR
 ]]></Declaration>
   </GVL>

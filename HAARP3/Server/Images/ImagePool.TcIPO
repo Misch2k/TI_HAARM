@@ -4,53 +4,73 @@
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="ImagePoolObject">
-          <v n="UniqueIdGenerator">"25"</v>
+          <v n="UniqueIdGenerator">"42"</v>
           <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
             <o>
               <v n="BitmapID">"Dunkel"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Dunkel.png"</v>
-              <v n="ItemID">10</v>
+              <v n="ItemID">26</v>
             </o>
             <o>
               <v n="BitmapID">"Haus"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Haus.png"</v>
-              <v n="ItemID">12</v>
+              <v n="ItemID">27</v>
             </o>
             <o>
               <v n="BitmapID">"Licht"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Licht.png"</v>
-              <v n="ItemID">14</v>
+              <v n="ItemID">28</v>
             </o>
             <o>
               <v n="BitmapID">"Stamm"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Stamm.png"</v>
-              <v n="ItemID">16</v>
+              <v n="ItemID">29</v>
             </o>
             <o>
               <v n="BitmapID">"Krone"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Krone.png"</v>
-              <v n="ItemID">18</v>
+              <v n="ItemID">30</v>
             </o>
             <o>
               <v n="BitmapID">"Sonne"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Sonne.png"</v>
-              <v n="ItemID">20</v>
+              <v n="ItemID">31</v>
             </o>
             <o>
               <v n="BitmapID">"Mond"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Mond.png"</v>
-              <v n="ItemID">22</v>
+              <v n="ItemID">32</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Einbruch_grun"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Einbruch_gr.png"</v>
+              <v n="ItemID">33</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Einbruch_rot"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Einbruch_rot.png"</v>
+              <v n="ItemID">34</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Regen"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Regen.png"</v>
+              <v n="ItemID">36</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Wolke"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Wolke.png"</v>
+              <v n="ItemID">39</v>
             </o>
             <o>
               <v n="BitmapID">""</v>
               <v n="FileID">""</v>
-              <v n="ItemID">24</v>
+              <v n="ItemID">41</v>
             </o>
           </l>
           <v n="GuidInit">{42798028-d813-4699-bcb3-3dd63cb8ff6f}</v>
           <v n="GuidReInit">{c6cfea87-c52f-4c64-a957-c6655f7dee3f}</v>
           <v n="GuidExitX">{87d7193e-282c-49a4-b3cf-d597ba3bff92}</v>
-          <v n="ValidIds">false</v>
+          <v n="ValidIds">true</v>
         </o>
       </Data>
       <TypeList>

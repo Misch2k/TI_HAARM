@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <GVL Name="GVL_Visu" Id="{9ca865cd-ee54-4f7a-b325-18aa1a18624a}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	Rege_Heute : BOOL;
+	Regen_Stunde : INT;
+	Regen_Minute : INT;
+	Regen_Dauer : INT;
+	Regen_Stunde_Ende : INT;
+	Regen_Minute_Ende : INT;
+	
+	Wetterbericht_Bild : STRING;
+	Wetterbericht_Vorhersage_Bild: STRING;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="FB_Heizung" Id="{c025c8c8-c9cc-4591-9faf-db1bae9cc80c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Heizung
+VAR_INPUT
+	Heizung_01 : INT;
+	Heizung_02 : INT;
+	Heizung_04 : INT;
+	Heizung_Sim : INT;
+	react : TIME;
+END_VAR
+VAR_OUTPUT
+	Heizung : INT;
+END_VAR
+VAR
+	history : ARRAY [0..4] OF INT;
+	first : BOOL := TRUE;
+	_i : INT;
+	maximum : INT := 0;
+	timer : TON;
+	
+	run_timer : BOOL := FALSE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF FIRST THEN
+	history[0] := Heizung_01;
+	history[1] := Heizung_02;
+	history[2] := Heizung_04;
+	history[3] := Heizung_Sim;
+	
+	FOR _i := 0 TO 3 DO
+		IF history[_i] > maximum THEN
+			maximum := history[_i];
+		END_IF
+	END_FOR
+	history[4] := maximum;
+	Heizung := maximum;
+	
+	FIRST := FALSE;
+ELSE
+	
+	IF history[0] <> Heizung_01 OR history[1] <> Heizung_02 OR history[2] <> Heizung_04 OR history[3] <> Heizung_Sim THEN
+		history[0] := Heizung_01;
+		history[1] := Heizung_02;
+		history[2] := Heizung_04;
+		history[3] := Heizung_Sim;
+		
+		FOR _i := 0 TO 3 DO
+			IF history[_i] > maximum THEN
+				maximum := history[_i];
+			END_IF
+		END_FOR
+		IF maximum <> history[4] THEN
+			run_timer := TRUE;
+			history[4] := maximum;	
+		END_IF
+	END_IF
+END_IF
+
+IF run_timer THEN
+	IF timer.Q THEN
+		run_timer := FALSE;
+		Heizung := history[4];
+	END_IF
+	timer(IN := run_timer, PT := react);
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

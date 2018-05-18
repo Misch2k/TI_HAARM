@@ -10,7 +10,13 @@ END_VAR
 PG_Alarm();
 PG_Calculate_Sun();
 PG_Rain();
-Visu();]]></ST>
+PG_Heizung();
+Visu();
+PG_Besucher();
+IF TRUE THEN
+	PG_SimulationsHaus();
+END_IF
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

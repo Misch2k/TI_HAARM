@@ -11,18 +11,18 @@ VAR_INPUT
 END_VAR
 VAR_OUTPUT
 	_rain : BOOL;
-END_VAR
-VAR
-	dayTrig : INT_R_TRIG;
-	RAND_H : DRAND;
-	RAND_M : DRAND;
-	RAND_D : DRAND;
 	rainToday : BOOL;
 	rainHour : INT;
 	rainMinute : INT;
 	rainDuration : INT;
 	rainTill_h : INT;
 	rainTill_m : INT;
+END_VAR
+VAR
+	dayTrig : INT_R_TRIG;
+	RAND_H : DRAND;
+	RAND_M : DRAND;
+	RAND_D : DRAND;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF _gen THEN

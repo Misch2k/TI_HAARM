@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <GVL Name="Haus4" Id="{ca3d3b82-6b66-4ce3-b3c7-182fbb092838}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	L_EinbruchBild : STRING;
+	WetterBild : STRING := BildWolke;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

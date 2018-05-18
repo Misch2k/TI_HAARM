@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="FB_Wetterbericht" Id="{d003c256-8d3b-4abd-9a2d-f070dfaf7c54}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Wetterbericht
+VAR_INPUT
+	Regen : BOOL;
+	Wind : BOOL;
+	HeuteRegen : BOOL;
+END_VAR
+VAR_OUTPUT
+	Aktuell : STRING;
+	Vorhersage : STRING;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Regen AND Wind THEN
+	Aktuell := GVL_CONSTANTS.ICON_WindRegen;
+ELSIF Regen THEN
+	Aktuell := GVL_CONSTANTS.ICON_Regen;
+ELSIF Wind THEN
+	Aktuell := GVL_CONSTANTS.ICON_WindWolke;
+ELSE
+	Aktuell := GVL_CONSTANTS.ICON_Wolke;
+END_IF
+
+IF HeuteRegen THEN
+	Vorhersage := GVL_CONSTANTS.ICON_Regen;
+ELSE
+	Vorhersage := GVL_CONSTANTS.ICON_Wolke;
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

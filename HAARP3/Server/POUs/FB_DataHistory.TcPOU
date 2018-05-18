@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
-  <POU Name="DataHistory" Id="{680c2198-cf2d-440e-8929-654d1bad9ca6}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK DataHistory
+  <POU Name="FB_DataHistory" Id="{680c2198-cf2d-440e-8929-654d1bad9ca6}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_DataHistory
 VAR_INPUT
 	_val : INT;
 	_save : BOOL;

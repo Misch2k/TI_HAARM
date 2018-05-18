@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <GVL Name="GVL_Constants" Id="{a5945d03-7265-4dfc-bd87-4c0358f528bf}">
+    <Declaration><![CDATA[VAR_GLOBAL CONSTANT
+	
+	_history : INT := 50;
+	_Licht_min : INT := 100;
+	_Licht_max : INT := 2500;
+	Alarm_time : TIME := T#10S;
+	Heizung_reaktion : TIME := T#20S;
+
+	BildEinbruchAlarm : STRING := 'Einbruch_rot';
+	BildEinbruchOk : STRING := 'Einbruch_grun';
+	BildRegen : STRING := 'Regen';
+	BildWolke : STRING := 'Wolke';
+	ICON_Mond : STRING := 'ICON_Mond';
+	ICON_Sonne : STRING := 'ICON_Sonne';
+	ICON_Wolke : STRING := 'ICON_Wolke';
+	ICON_Regen : STRING := 'ICON_Regen';
+	ICON_WindRegen : STRING := 'ICON_WindRegen';
+	ICON_WindWolke : STRING := 'ICON_WindWolke';
+	
+	Sin_Manipulator_STD : INT := 0;	
+	Regenwahrscheinlichkeit_STD : INT := 30;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

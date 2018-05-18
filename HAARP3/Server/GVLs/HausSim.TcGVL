@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <GVL Name="HausSim" Id="{374952b0-c91d-4138-9ac9-fe1efef1c703}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	L_Licht : BOOL;
+	L_EinbruchBild : STRING;
+	WetterBild : STRING := BildWolke;
+	
+	Besucher : INT;
+	Alarm : BOOL;
+	heizung_SIM : INT;
+	
+	Sim_Haus_Glocke : BOOL;
+	Sim_Haus_Alarm : BOOL;
+	Sim_Haus_ResetAlarm: BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

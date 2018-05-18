@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="FB_Alarm_Bild" Id="{cd1e0a4b-3c01-441d-9fb6-02ac1cb39592}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Alarm_Bild
+VAR_INPUT
+	_alarm : BOOL;
+	_h1Alarm : BOOL;
+	_h2Alarm : BOOL;
+	_h4Alarm : BOOL;
+	_Bild_Alarm : STRING;
+	_BIld_Ok : STRING;
+END_VAR
+VAR_OUTPUT
+	SH1 : STRING;
+	SH2 : STRING;
+	SH4 : STRING;
+END_VAR
+VAR
+	first : BOOL := TRUE;
+	RTrig_H1 : R_TRIG;
+	RTrig_H2 : R_TRIG;
+	RTrig_H4 : R_TRIG;
+	FTrig_H1 : F_TRIG;
+	FTrig_H2 : F_TRIG;
+	FTrig_h4 : F_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[RTrig_H1(CLK := _h1Alarm);
+FTrig_H1(CLK := _h1Alarm);
+RTrig_H2(CLK := _h1Alarm);
+FTrig_H2(CLK := _h1Alarm);
+RTrig_H4(CLK := _h1Alarm);
+FTrig_H4(CLK := _h1Alarm);
+
+IF first THEN
+	IF _h1Alarm THEN
+		SH1 := _Bild_Alarm;
+	ELSE
+		SH1 := _Bild_Ok;
+	END_IF
+	IF _h2Alarm THEN
+		SH2 := _Bild_Alarm;
+	ELSE
+		SH2 := _Bild_Ok;
+	END_IF
+	IF _h4Alarm THEN
+		SH4 := _Bild_Alarm;
+	ELSE
+		SH4 := _Bild_Ok;
+	END_IF
+	
+first := FALSE;
+
+ELSE
+	IF RTRIG_H1.Q THEN
+		SH1 := _Bild_Alarm;
+	ELSIF FTRIG_H1.Q THEN
+		SH1 := _Bild_Ok;
+	END_IF
+	IF RTRIG_H2.Q THEN
+		SH2 := _Bild_Alarm;
+	ELSIF FTRIG_H2.Q THEN
+		SH2 := _Bild_Ok;
+	END_IF
+	IF RTRIG_H4.Q THEN
+		SH4 := _Bild_Alarm;
+	ELSIF FTRIG_H4.Q THEN
+		SH4 := _Bild_Ok;
+	END_IF
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

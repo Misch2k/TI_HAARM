@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
-  <POU Name="Alarm" Id="{572deef5-61f9-4ec5-93f6-0c170029445b}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK Alarm
+  <POU Name="FB_Alarm" Id="{572deef5-61f9-4ec5-93f6-0c170029445b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Alarm
 VAR_INPUT
 	AL_H1 : BOOL;	
 	AL_H1_V : BOOL;
@@ -9,7 +9,9 @@ VAR_INPUT
 	AL_H2_V : BOOL;
 	AL_H4 : BOOL;
 	AL_H4_V : BOOL;
+	Al_Sim : BOOL;
 	T_Alarm : TIME;
+	reset : BOOL;
 END_VAR
 VAR_OUTPUT
 	GL_Alarm : BOOL;
@@ -17,6 +19,8 @@ END_VAR
 VAR
 	has_Alarm : BOOL;
 	Alarm_On : TOF;
+	Trig : F_TRIG;
+	Alarm : RS;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -26,10 +30,12 @@ END_VAR
 	AL_H4 OR 
 	AL_H1_V OR 
 	AL_H2_V OR 
-	AL_H4_V;
+	AL_H4_V OR
+	AL_Sim;
 	
 Alarm_On(IN := has_Alarm, PT := T_Alarm);
-GL_Alarm := Alarm_On.Q;]]></ST>
+TRIG(CLK := Alarm_On.Q);
+Alarm(SET := has_Alarm, RESET1 :=  TRIG.Q OR reset, Q1 => GL_Alarm);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
