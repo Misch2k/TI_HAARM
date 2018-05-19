@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="FB_Wind" Id="{d1377e74-7c37-4c81-8947-6daed6ae57ec}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Wind
+VAR_INPUT
+	_do : BOOL;
+	_max : REAL;
+	Simulation : BOOL;
+END_VAR
+VAR_OUTPUT
+	Wind : REAL := 50;
+END_VAR
+VAR
+	Count : LREAL;
+	speed : REAL := 0.01;
+	Step : BOOL := TRUE;
+	valToAdd : REAL;
+	
+	StartTime : TON;
+	StopTime : TON;
+	StartT : TIME := T#2S;
+	StopT : TIME := T#2S;
+	Rand : DRAND;
+	Direction : BOOL := TRUE;
+	Prog : REAL;
+	Height : REAL := 100;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[StartTime(IN := Direction, PT := StartT);
+StopTime(IN := NOT Direction, PT := StopT);
+
+IF Direction THEN
+	Prog := ( TIME_TO_REAL(StartTime.ET) / TIME_TO_REAL(StartT) ) * 90 ;
+	IF StartTime.Q THEN
+		Direction := FALSE;
+		Rand();
+		StartT := LREAL_TO_TIME(Rand.Num * 100000);
+	END_IF
+ELSE
+	Prog := 90 - ( TIME_TO_REAL(StopTime.ET) / TIME_TO_REAL(StartT) ) * 90;
+	IF StopTime.Q THEN
+		Direction := TRUE;
+		Rand();
+		StartT := LREAL_TO_TIME(Rand.Num * 100000);
+		Step := NOT STEP;
+	END_IF
+END_IF
+IF _do THEN
+	valToAdd := LREAL_TO_REAL(SIN(DEG_TO_RAD(Prog)) * (TIME_TO_REAL(StartT) / 2000000) ) ;
+	IF STEP THEN
+		valToAdd := valToAdd * ((_max - Wind) / _max);
+		Wind := WIND + valToAdd;
+	ELSE
+		valToAdd := valToAdd * (Wind / _max);
+		Wind := WIND - valToAdd;
+	END_IF
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

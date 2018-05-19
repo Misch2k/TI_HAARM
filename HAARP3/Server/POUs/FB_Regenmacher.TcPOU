@@ -8,6 +8,7 @@ VAR_INPUT
 	_h : INT;
 	_day : INT;
 	_percent : INT;
+	Simulation : BOOL;
 END_VAR
 VAR_OUTPUT
 	_rain : BOOL;
@@ -25,7 +26,7 @@ VAR
 	RAND_D : DRAND;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF _gen THEN
+      <ST><![CDATA[IF _gen AND Simulation THEN
 	dayTrig(_val := _day);
 	
 	IF dayTrig._Q THEN

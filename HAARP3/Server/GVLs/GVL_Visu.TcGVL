@@ -11,6 +11,12 @@
 	
 	Wetterbericht_Bild : STRING;
 	Wetterbericht_Vorhersage_Bild: STRING;
+	
+	Simulation : BOOL := FALSE;
+	
+	
+	Uhr : TUhr;
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

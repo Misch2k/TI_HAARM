@@ -3,11 +3,13 @@
   <GVL Name="HausSim" Id="{374952b0-c91d-4138-9ac9-fe1efef1c703}">
     <Declaration><![CDATA[VAR_GLOBAL
 	L_Licht : BOOL;
+	L_Licht_V : BOOL;
 	L_EinbruchBild : STRING;
 	WetterBild : STRING := BildWolke;
 	
 	Besucher : INT;
 	Alarm : BOOL;
+	Alarm_V : BOOL;
 	heizung_SIM : INT;
 	
 	Sim_Haus_Glocke : BOOL;

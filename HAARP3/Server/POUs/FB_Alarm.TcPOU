@@ -10,6 +10,7 @@ VAR_INPUT
 	AL_H4 : BOOL;
 	AL_H4_V : BOOL;
 	Al_Sim : BOOL;
+	Simulation : BOOL;
 	T_Alarm : TIME;
 	reset : BOOL;
 END_VAR
@@ -24,7 +25,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[has_Alarm := 
+      <ST><![CDATA[IF Simulation THEN
+has_Alarm := 
 	AL_H1 OR 
 	AL_H2 OR 
 	AL_H4 OR 
@@ -32,6 +34,15 @@ END_VAR
 	AL_H2_V OR 
 	AL_H4_V OR
 	AL_Sim;
+ELSE
+	has_Alarm := 
+	AL_H1 OR 
+	AL_H2 OR 
+	AL_H4 OR 
+	AL_H1_V OR 
+	AL_H2_V OR 
+	AL_H4_V;
+END_IF
 	
 Alarm_On(IN := has_Alarm, PT := T_Alarm);
 TRIG(CLK := Alarm_On.Q);

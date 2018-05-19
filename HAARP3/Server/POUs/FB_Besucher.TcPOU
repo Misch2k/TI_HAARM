@@ -6,6 +6,8 @@ VAR_INPUT
 	_bes_H1 : INT;
 	_bes_H2 : INT;
 	_bes_H4 : INT;
+	_bes_Sim : INT;
+	Simulation : BOOL;
 	_res_V : BOOL;
 	_res_A : BOOL;
 END_VAR
@@ -17,8 +19,11 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[_besucher := _bes_H1 + _bes_H2 + _bes_H4;
-
+      <ST><![CDATA[IF Simulation THEN
+	_besucher := _bes_H1 + _bes_H2 + _bes_H4 + _bes_Sim;
+ELSE
+	_besucher := _bes_H1 + _bes_H2 + _bes_H4;
+END_IF
 IF _res_V OR _res_A THEN
 	_res := TRUE;
 ELSE

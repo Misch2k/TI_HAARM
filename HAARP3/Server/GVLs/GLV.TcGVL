@@ -26,6 +26,12 @@
 	_Rday : INT;
 	
 	testData : ARRAY [0.._history] OF INT;
+	WindData : ARRAY [0.._history] OF REAL;
+	
+	Wind_V : REAL;
+	Wind_Auto : BOOL;
+	Wind_Auto_V : BOOL;
+	BWind : BOOL;
 	
 	L_Sonnenstand : INT;
 	L_Sonne : STRING;

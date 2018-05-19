@@ -11,11 +11,10 @@ PG_Alarm();
 PG_Calculate_Sun();
 PG_Rain();
 PG_Heizung();
-Visu();
+PG_Wind();
+PG_Visu();
 PG_Besucher();
-IF TRUE THEN
-	PG_SimulationsHaus();
-END_IF
+PG_SimulationsHaus();
 ]]></ST>
     </Implementation>
   </POU>

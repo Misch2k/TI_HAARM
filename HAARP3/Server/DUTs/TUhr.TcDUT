@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <DUT Name="TUhr" Id="{9aa811c9-e405-46ce-95b1-61fd46d836c5}">
+    <Declaration><![CDATA[TYPE TUhr :
+STRUCT
+	Stunde : REAL;
+	Minute : REAL;
+	Sekunde : REAL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

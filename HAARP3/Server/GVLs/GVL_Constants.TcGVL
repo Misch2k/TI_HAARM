@@ -8,7 +8,7 @@
 	_Licht_max : INT := 2500;
 	Alarm_time : TIME := T#10S;
 	Heizung_reaktion : TIME := T#20S;
-
+	Maximum_Wind : REAL := 300;
 	BildEinbruchAlarm : STRING := 'Einbruch_rot';
 	BildEinbruchOk : STRING := 'Einbruch_grun';
 	BildRegen : STRING := 'Regen';

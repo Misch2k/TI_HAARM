@@ -4,7 +4,7 @@
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="ImagePoolObject">
-          <v n="UniqueIdGenerator">"42"</v>
+          <v n="UniqueIdGenerator">"50"</v>
           <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
             <o>
               <v n="BitmapID">"Dunkel"</v>
@@ -62,9 +62,29 @@
               <v n="ItemID">39</v>
             </o>
             <o>
+              <v n="BitmapID">"Minutenzeiger"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Minutenzeiger.png"</v>
+              <v n="ItemID">41</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Sekundenzeiger"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Sekundenzeiger.png"</v>
+              <v n="ItemID">43</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Stundenzeiger"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Stundenzeiger.png"</v>
+              <v n="ItemID">45</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Ziffernblatt"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|Images\Ziffernblatt.png"</v>
+              <v n="ItemID">47</v>
+            </o>
+            <o>
               <v n="BitmapID">""</v>
               <v n="FileID">""</v>
-              <v n="ItemID">41</v>
+              <v n="ItemID">49</v>
             </o>
           </l>
           <v n="GuidInit">{42798028-d813-4699-bcb3-3dd63cb8ff6f}</v>

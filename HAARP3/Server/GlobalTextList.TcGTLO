@@ -76,6 +76,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"62"</v>
+              <v n="TextDefault">"%2r km/h Wind"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"5"</v>
               <v n="TextDefault">"%i"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -88,6 +93,11 @@
             <o>
               <v n="TextID">"51"</v>
               <v n="TextDefault">"%i : Heizung"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"63"</v>
+              <v n="TextDefault">"%i km/h Wind"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -211,6 +221,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"59"</v>
+              <v n="TextDefault">"Licht"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"12"</v>
               <v n="TextDefault">"Real Time"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -256,6 +271,16 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"60"</v>
+              <v n="TextDefault">"Simulation"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"58"</v>
+              <v n="TextDefault">"Simulations Haus"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"46"</v>
               <v n="TextDefault">"Uhr %i"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -283,6 +308,11 @@
             <o>
               <v n="TextID">"40"</v>
               <v n="TextDefault">"Vorhersage Heute"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"61"</v>
+              <v n="TextDefault">"Wind Manuell"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>

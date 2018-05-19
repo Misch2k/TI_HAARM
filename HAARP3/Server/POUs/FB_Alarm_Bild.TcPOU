@@ -7,6 +7,7 @@ VAR_INPUT
 	_h1Alarm : BOOL;
 	_h2Alarm : BOOL;
 	_h4Alarm : BOOL;
+	_hSimAlarm : BOOL;
 	_Bild_Alarm : STRING;
 	_BIld_Ok : STRING;
 END_VAR
@@ -14,15 +15,18 @@ VAR_OUTPUT
 	SH1 : STRING;
 	SH2 : STRING;
 	SH4 : STRING;
+	SHSim : STRING;
 END_VAR
 VAR
 	first : BOOL := TRUE;
 	RTrig_H1 : R_TRIG;
 	RTrig_H2 : R_TRIG;
 	RTrig_H4 : R_TRIG;
+	RTrig_HSim : R_TRIG;
 	FTrig_H1 : F_TRIG;
 	FTrig_H2 : F_TRIG;
 	FTrig_h4 : F_TRIG;
+	FTrig_HSim : F_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -32,6 +36,8 @@ RTrig_H2(CLK := _h1Alarm);
 FTrig_H2(CLK := _h1Alarm);
 RTrig_H4(CLK := _h1Alarm);
 FTrig_H4(CLK := _h1Alarm);
+FTrig_HSim(CLK := _hSimAlarm);
+RTrig_HSim(CLK := _hSimAlarm);
 
 IF first THEN
 	IF _h1Alarm THEN
@@ -48,6 +54,11 @@ IF first THEN
 		SH4 := _Bild_Alarm;
 	ELSE
 		SH4 := _Bild_Ok;
+	END_IF
+	IF _hSimAlarm THEN
+		SHSim := _Bild_Alarm;
+	ELSE
+		SHSIM := _Bild_Ok;
 	END_IF
 	
 first := FALSE;
@@ -67,6 +78,11 @@ ELSE
 		SH4 := _Bild_Alarm;
 	ELSIF FTRIG_H4.Q THEN
 		SH4 := _Bild_Ok;
+	END_IF
+	IF RTRIG_HSIM.Q THEN
+		SHSIM := _Bild_Alarm;
+	ELSIF FTRIG_HSim.Q THEN
+		SHSim := _Bild_Ok;
 	END_IF
 END_IF]]></ST>
     </Implementation>
