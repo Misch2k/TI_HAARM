@@ -31,10 +31,6 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
-    <Compile Include="GVLs\GVL_Simulations_Haus.TcGVL">
-      <SubType>Code</SubType>
-      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
-    </Compile>
     <Compile Include="GVLs\GVL_Visu.TcGVL">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
@@ -105,6 +101,10 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
+    <Compile Include="POUs\FB_Visu_BildToggle.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
     <Compile Include="POUs\FB_Wetterbericht.TcPOU">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
@@ -124,7 +124,7 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\GET_SINUS.TcPOU">
+    <Compile Include="POUs\FB_Sonne.TcPOU">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
@@ -379,7 +379,7 @@
             <o t="UserList">
               <a n="Users" cet="User">
                 <o>
-                  <v n="Id">{8788cfe4-b300-4c24-95ab-9c563c625d97}</v>
+                  <v n="Id">{0c79c6c4-746a-4db7-ac93-07482a511dcb}</v>
                   <v n="Name">"Owner"</v>
                   <v n="FullName">""</v>
                   <v n="Description">""</v>
@@ -395,24 +395,24 @@
             <o t="GroupList">
               <a n="Groups" cet="Group">
                 <o>
-                  <v n="Id">{a68001bf-f050-47db-9230-7837f8cfd00f}</v>
-                  <v n="Name">"Everyone"</v>
-                  <v n="Description">""</v>
-                  <v n="IsEveryoneGroup">true</v>
-                  <v n="IsOwnerGroup">false</v>
-                  <l n="UserMembers" t="ArrayList" cet="Guid">
-                    <v>8788cfe4-b300-4c24-95ab-9c563c625d97</v>
-                  </l>
-                  <l n="GroupMembers" t="ArrayList" />
-                </o>
-                <o>
-                  <v n="Id">{df0f62bb-9533-420f-8172-542b94091c4f}</v>
+                  <v n="Id">{4dedcaf5-09fb-441d-8562-851e821784a8}</v>
                   <v n="Name">"Owner"</v>
                   <v n="Description">""</v>
                   <v n="IsEveryoneGroup">false</v>
                   <v n="IsOwnerGroup">true</v>
                   <l n="UserMembers" t="ArrayList" cet="Guid">
-                    <v>8788cfe4-b300-4c24-95ab-9c563c625d97</v>
+                    <v>0c79c6c4-746a-4db7-ac93-07482a511dcb</v>
+                  </l>
+                  <l n="GroupMembers" t="ArrayList" />
+                </o>
+                <o>
+                  <v n="Id">{315f1190-9bcc-4db4-b628-4620894b1067}</v>
+                  <v n="Name">"Everyone"</v>
+                  <v n="Description">""</v>
+                  <v n="IsEveryoneGroup">true</v>
+                  <v n="IsOwnerGroup">false</v>
+                  <l n="UserMembers" t="ArrayList" cet="Guid">
+                    <v>0c79c6c4-746a-4db7-ac93-07482a511dcb</v>
                   </l>
                   <l n="GroupMembers" t="ArrayList" />
                 </o>
@@ -421,7 +421,7 @@
             <v>UserAuthentication</v>
             <o t="UserAuthentication">
               <d n="UserToPasswordHash" t="Hashtable" ckt="Guid" cvt="String">
-                <v>8788cfe4-b300-4c24-95ab-9c563c625d97</v>
+                <v>0c79c6c4-746a-4db7-ac93-07482a511dcb</v>
                 <v>d41d8cd98f00b204e9800998ecf8427e</v>
               </d>
             </o>

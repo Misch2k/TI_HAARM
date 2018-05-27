@@ -9,10 +9,14 @@
 	Alarm_time : TIME := T#10S;
 	Heizung_reaktion : TIME := T#20S;
 	Maximum_Wind : REAL := 300;
+	BildMond : STRING := 'Mond';
+	BildSonne : STRING := 'Sonne';
 	BildEinbruchAlarm : STRING := 'Einbruch_rot';
 	BildEinbruchOk : STRING := 'Einbruch_grun';
 	BildRegen : STRING := 'Regen';
 	BildWolke : STRING := 'Wolke';
+	BildLicht : STRING := 'Licht';
+	BildDunkel : STRING := 'Dunkel';
 	ICON_Mond : STRING := 'ICON_Mond';
 	ICON_Sonne : STRING := 'ICON_Sonne';
 	ICON_Wolke : STRING := 'ICON_Wolke';
@@ -22,6 +26,8 @@
 	
 	Sin_Manipulator_STD : INT := 0;	
 	Regenwahrscheinlichkeit_STD : INT := 30;
+	TagNachtFixGrad : INT := -90;
+	TagNachtMaxTransparenz : INT := 255;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

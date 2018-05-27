@@ -4,6 +4,7 @@
     <Declaration><![CDATA[VAR_GLOBAL
 	L_EinbruchBild : STRING;
 	WetterBild : STRING := BildWolke;
+	BildLicht : STRING := GVL_Constants.BildLicht;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -28,11 +28,15 @@
 	testData : ARRAY [0.._history] OF INT;
 	WindData : ARRAY [0.._history] OF REAL;
 	
-	Wind_V : REAL;
+	Wind_V : INT;
 	Wind_Auto : BOOL;
 	Wind_Auto_V : BOOL;
 	BWind : BOOL;
 	
+	Sonne_Auto : BOOL;
+	Sonne_Auto_V : BOOL;
+	Sonne_V	: INT;
+	Sonne_A	: INT;
 	L_Sonnenstand : INT;
 	L_Sonne : STRING;
 	L_Himmel : DWORD;

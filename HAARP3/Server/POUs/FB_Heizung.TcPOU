@@ -40,8 +40,14 @@ END_VAR
 		END_IF
 	END_FOR
 	history[4] := maximum;
-	Heizung := maximum;
-	
+	IF maximum < 15 THEN
+		Heizung := 15;
+	ELSIF maximum > 30 THEN
+		Heizung := 30;
+	ELSE
+		Heizung := maximum;
+	END_IF
+
 	FIRST := FALSE;
 ELSE
 	
@@ -71,7 +77,13 @@ END_IF
 IF run_timer THEN
 	IF timer.Q THEN
 		run_timer := FALSE;
-		Heizung := history[4];
+		IF history[4] < 15 THEN
+			Heizung := 15;
+		ELSIF history[4] > 30 THEN
+			Heizung := 30;
+		ELSE
+			Heizung := history[4];
+		END_IF
 	END_IF
 	timer(IN := run_timer, PT := react);
 END_IF]]></ST>

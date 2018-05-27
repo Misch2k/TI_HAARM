@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="FB_Visu_BildToggle" Id="{d2a7c3a4-3bd4-4ed0-9f96-df9d903f8986}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Visu_BildToggle
+VAR_INPUT
+	val : BOOL;
+	s_t : STRING;
+	s_f : STRING;
+END_VAR
+VAR_OUTPUT
+	BILD : STRING;
+END_VAR
+VAR
+	FIRST : BOOL := TRUE;
+	history : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF FIRST THEN
+	IF val THEN
+		BILD := s_t;
+	ELSE
+		BILD := s_f;
+	END_IF
+	history := val;
+END_IF
+
+IF val <> history THEN
+	IF val THEN
+		BILD := s_t;
+	ELSE
+		BILD := s_f;
+	END_IF
+	history := val;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

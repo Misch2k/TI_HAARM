@@ -6,6 +6,7 @@
 	L_Licht_V : BOOL;
 	L_EinbruchBild : STRING;
 	WetterBild : STRING := BildWolke;
+	BildLicht : STRING := GVL_Constants.BildLicht;
 	
 	Besucher : INT;
 	Alarm : BOOL;

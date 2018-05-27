@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="FB_Sonne" Id="{5028f321-f673-4a53-9988-f9dc48dcd800}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Sonne
+VAR CONSTANT
+	dayFix : INT := -90;
+END_VAR
+VAR_INPUT
+	_val : REAL;
+	_auto : BOOL;
+	_visu_val : INT;
+	_average: INT := 1;
+	_time : INT;
+	_min : INT;
+	_max : INT;
+	_simulate : BOOL;
+END_VAR
+VAR_OUTPUT
+	_sin : INT;
+	_trig : BOOL;
+END_VAR
+VAR
+	_do : BOOL;
+	diff : INT;
+	average : INT;
+	T_Trig : INT_Trig;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[T_Trig(_val := _time, _Q => _do);
+_trig := _do;
+
+IF _do AND _auto AND _simulate THEN
+	diff := (_max - _min) / 2;
+	average := REAL_TO_INT(_min + diff);
+	_sin := LREAL_TO_INT(SIN(DEG_TO_RAD(_val + dayFix)) * diff + average);
+ELSIF _do AND _simulate THEN
+	_sin := _visu_val;
+ELSIF _do THEN
+	_sin := average;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -3,12 +3,15 @@
   <POU Name="FB_Wind" Id="{d1377e74-7c37-4c81-8947-6daed6ae57ec}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Wind
 VAR_INPUT
-	_do : BOOL;
+	_auto : BOOL;
+	_wind_V : INT;
 	_max : REAL;
+	_time : INT;
 	Simulation : BOOL;
 END_VAR
 VAR_OUTPUT
 	Wind : REAL := 50;
+	Trig : BOOL;
 END_VAR
 VAR
 	Count : LREAL;
@@ -24,12 +27,15 @@ VAR
 	Direction : BOOL := TRUE;
 	Prog : REAL;
 	Height : REAL := 100;
+	T_Trig : INT_Trig;
+	_do : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[StartTime(IN := Direction, PT := StartT);
 StopTime(IN := NOT Direction, PT := StopT);
-
+T_TRIG(_val := _time, _Q => _do);
+Trig := _do;
 IF Direction THEN
 	Prog := ( TIME_TO_REAL(StartTime.ET) / TIME_TO_REAL(StartT) ) * 90 ;
 	IF StartTime.Q THEN
@@ -46,7 +52,7 @@ ELSE
 		Step := NOT STEP;
 	END_IF
 END_IF
-IF _do THEN
+IF _do AND _auto THEN
 	valToAdd := LREAL_TO_REAL(SIN(DEG_TO_RAD(Prog)) * (TIME_TO_REAL(StartT) / 2000000) ) ;
 	IF STEP THEN
 		valToAdd := valToAdd * ((_max - Wind) / _max);
@@ -55,6 +61,10 @@ IF _do THEN
 		valToAdd := valToAdd * (Wind / _max);
 		Wind := WIND - valToAdd;
 	END_IF
+END_IF
+
+IF NOT _auto THEN
+	Wind := _wind_V;
 END_IF]]></ST>
     </Implementation>
   </POU>

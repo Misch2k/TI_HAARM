@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
-  <GVL Name="GVL_Simulations_Haus" Id="{e6ed5590-eeb1-43b7-b0d3-ec7308a276ec}">
-    <Declaration><![CDATA[VAR_GLOBAL
-
-END_VAR]]></Declaration>
-  </GVL>
-</TcPlcObject>
