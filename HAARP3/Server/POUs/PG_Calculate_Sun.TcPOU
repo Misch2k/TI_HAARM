@@ -256,7 +256,7 @@ END_VAR
                         <o>
                           <v n="Bounds">"0, 0, 0, 0"</v>
                           <n n="ElementGroupId" />
-                          <v n="Negated">true</v>
+                          <v n="Negated">false</v>
                           <v n="SetReset" t="SetReset">None</v>
                           <v n="SetResetRef" t="SetResetRef">None</v>
                           <v n="PretendsToBeConnected">false</v>
@@ -318,7 +318,7 @@ END_VAR
                     <o n="Input" t="CFCInputPinWithSetReset">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Negated">false</v>
+                      <v n="Negated">true</v>
                       <v n="SetReset" t="SetReset">None</v>
                       <v n="SetResetRef" t="SetResetRef">None</v>
                       <v n="PretendsToBeConnected">false</v>

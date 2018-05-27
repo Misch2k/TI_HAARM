@@ -230,7 +230,7 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">210</v>
+                      <v n="Value">154</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
@@ -238,11 +238,11 @@
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">177</v>
+                      <v n="Value">202</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">177</v>
+                      <v n="Value">202</v>
                     </o>
                     <o>
                       <v n="Id">1651471674L</v>
@@ -270,11 +270,11 @@
                     </o>
                     <o>
                       <v n="Id">550940142L</v>
-                      <v n="Value">298</v>
+                      <v n="Value">255</v>
                     </o>
                     <o>
                       <v n="Id">1473355128L</v>
-                      <v n="Value">228</v>
+                      <v n="Value">241</v>
                     </o>
                     <o>
                       <v n="Id">493260384L</v>
@@ -622,7 +622,7 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">214</v>
+                      <v n="Value">164</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
@@ -630,11 +630,11 @@
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">177</v>
+                      <v n="Value">194</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">177</v>
+                      <v n="Value">194</v>
                     </o>
                     <o>
                       <v n="Id">1651471674L</v>
@@ -662,11 +662,11 @@
                     </o>
                     <o>
                       <v n="Id">550940142L</v>
-                      <v n="Value">302</v>
+                      <v n="Value">261</v>
                     </o>
                     <o>
                       <v n="Id">1473355128L</v>
-                      <v n="Value">612</v>
+                      <v n="Value">621</v>
                     </o>
                     <o>
                       <v n="Id">493260384L</v>
@@ -752,7 +752,7 @@
                     </o>
                     <o>
                       <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
+                      <v n="Value">"LEFT"</v>
                     </o>
                     <o>
                       <v n="Id">2565699834L</v>
@@ -780,11 +780,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">384</v>
+                      <v n="Value">409</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">524</v>
+                      <v n="Value">530</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -926,11 +926,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">568</v>
+                      <v n="Value">546</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">524</v>
+                      <v n="Value">530</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1044,7 +1044,7 @@
                     </o>
                     <o>
                       <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
+                      <v n="Value">"LEFT"</v>
                     </o>
                     <o>
                       <v n="Id">2565699834L</v>
@@ -1072,11 +1072,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">384</v>
+                      <v n="Value">409</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">569</v>
+                      <v n="Value">560</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1218,11 +1218,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">568</v>
+                      <v n="Value">546</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">569</v>
+                      <v n="Value">560</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1336,7 +1336,7 @@
                     </o>
                     <o>
                       <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
+                      <v n="Value">"LEFT"</v>
                     </o>
                     <o>
                       <v n="Id">2565699834L</v>
@@ -1364,11 +1364,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">396</v>
+                      <v n="Value">409</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">610</v>
+                      <v n="Value">591</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1404,7 +1404,7 @@
                     </o>
                     <o>
                       <v n="Id">390574330L</v>
-                      <v n="Value">"Regen Dauer: %i"</v>
+                      <v n="Value">"Regen Dauer: %i min"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -1420,7 +1420,7 @@
                     </o>
                     <o>
                       <v n="Id">823443203L</v>
-                      <v n="Value">"49"</v>
+                      <v n="Value">"69"</v>
                     </o>
                   </l>
                 </o>
@@ -1510,11 +1510,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">384</v>
+                      <v n="Value">364</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">149</v>
+                      <v n="Value">179</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1656,11 +1656,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">568</v>
+                      <v n="Value">548</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">149</v>
+                      <v n="Value">179</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1802,7 +1802,7 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">384</v>
+                      <v n="Value">364</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
@@ -1854,7 +1854,7 @@
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
-                      <v n="Value">"NOT Rege_Heute AND NOT Regen"</v>
+                      <v n="Value">"NOT Rege_Heute OR Regen"</v>
                     </o>
                     <o>
                       <v n="Id">823443203L</v>
@@ -1948,7 +1948,7 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">568</v>
+                      <v n="Value">548</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
@@ -2000,7 +2000,7 @@
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
-                      <v n="Value">"NOT Rege_Heute AND NOT Regen"</v>
+                      <v n="Value">"NOT Rege_Heute OR Regen"</v>
                     </o>
                     <o>
                       <v n="Id">823443203L</v>
@@ -2066,7 +2066,7 @@
                     </o>
                     <o>
                       <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
+                      <v n="Value">"LEFT"</v>
                     </o>
                     <o>
                       <v n="Id">2565699834L</v>
@@ -2094,15 +2094,15 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">405</v>
+                      <v n="Value">409</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">649</v>
+                      <v n="Value">560</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">353</v>
+                      <v n="Value">352</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
@@ -2268,10 +2268,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>8823d803-0e59-4223-a4eb-4c17ad02455f</v>
-                <v>FB_Exit</v>
-                <v>e78cc58d-16fc-4f6a-b718-1b977e4a8c80</v>
                 <v>FB_Reinit</v>
                 <v>746f45eb-dfa0-4357-9c73-16c1bc347a8f</v>
+                <v>FB_Exit</v>
+                <v>e78cc58d-16fc-4f6a-b718-1b977e4a8c80</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{6d8d6614-3869-4780-81e4-da052695176f}</v>
@@ -2315,7 +2315,7 @@
             </o>
             <v n="DialogDut">{469e3a1b-1802-4e02-9dc1-dc2fb9e64f96}</v>
           </o>
-          <v n="LastUsedIdForIdentifier">38</v>
+          <v n="LastUsedIdForIdentifier">39</v>
           <o n="TextDocument" t="TextDocument">
             <a n="TextLines" cet="TextLine">
               <o>
