@@ -14,57 +14,19 @@ VAR_OUTPUT
 	Trig : BOOL;
 END_VAR
 VAR
-	Count : LREAL;
-	speed : REAL := 0.01;
-	Step : BOOL := TRUE;
-	valToAdd : REAL;
-	
-	StartTime : TON;
-	StopTime : TON;
-	StartT : TIME := T#2S;
-	StopT : TIME := T#2S;
-	Rand : DRAND;
-	Direction : BOOL := TRUE;
-	Prog : REAL;
-	Height : REAL := 100;
 	T_Trig : INT_Trig;
+	random : DRAND();
+	t_rand : INT;
 	_do : BOOL;
+	direction : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[StartTime(IN := Direction, PT := StartT);
-StopTime(IN := NOT Direction, PT := StopT);
-T_TRIG(_val := _time, _Q => _do);
-Trig := _do;
-IF Direction THEN
-	Prog := ( TIME_TO_REAL(StartTime.ET) / TIME_TO_REAL(StartT) ) * 90 ;
-	IF StartTime.Q THEN
-		Direction := FALSE;
-		Rand();
-		StartT := LREAL_TO_TIME(Rand.Num * 100000);
-	END_IF
-ELSE
-	Prog := 90 - ( TIME_TO_REAL(StopTime.ET) / TIME_TO_REAL(StartT) ) * 90;
-	IF StopTime.Q THEN
-		Direction := TRUE;
-		Rand();
-		StartT := LREAL_TO_TIME(Rand.Num * 100000);
-		Step := NOT STEP;
-	END_IF
-END_IF
-IF _do AND _auto THEN
-	valToAdd := LREAL_TO_REAL(SIN(DEG_TO_RAD(Prog)) * (TIME_TO_REAL(StartT) / 2000000) ) ;
-	IF STEP THEN
-		valToAdd := valToAdd * ((_max - Wind) / _max);
-		Wind := WIND + valToAdd;
-	ELSE
-		valToAdd := valToAdd * (Wind / _max);
-		Wind := WIND - valToAdd;
-	END_IF
-END_IF
+      <ST><![CDATA[T_Trig(_val := _time, _Q => _do);
+random();
 
-IF NOT _auto THEN
-	Wind := _wind_V;
+IF _do THEN
+	t_rand := LREAL_TO_INT(random.Num * _max);
 END_IF]]></ST>
     </Implementation>
   </POU>

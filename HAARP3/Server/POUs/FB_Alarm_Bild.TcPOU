@@ -32,10 +32,10 @@ END_VAR
     <Implementation>
       <ST><![CDATA[RTrig_H1(CLK := _h1Alarm);
 FTrig_H1(CLK := _h1Alarm);
-RTrig_H2(CLK := _h1Alarm);
-FTrig_H2(CLK := _h1Alarm);
-RTrig_H4(CLK := _h1Alarm);
-FTrig_H4(CLK := _h1Alarm);
+RTrig_H2(CLK := _h2Alarm);
+FTrig_H2(CLK := _h2Alarm);
+RTrig_H4(CLK := _h4Alarm);
+FTrig_H4(CLK := _h4Alarm);
 FTrig_HSim(CLK := _hSimAlarm);
 RTrig_HSim(CLK := _hSimAlarm);
 

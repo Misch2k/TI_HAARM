@@ -8,7 +8,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[PG_Time();
 PG_Alarm();
-PG_Calculate_Sun();
+PG_Sonne();
 PG_Rain();
 PG_Heizung();
 PG_Wind();
