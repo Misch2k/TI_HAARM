@@ -2,19 +2,31 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
   <GVL Name="HausSim" Id="{374952b0-c91d-4138-9ac9-fe1efef1c703}">
     <Declaration><![CDATA[VAR_GLOBAL
+	// Licht brennt
 	L_Licht : BOOL;
+	// Licht einschalten (Visu)
 	L_Licht_V : BOOL;
+	// Einbruchbild (Wechset)
 	L_EinbruchBild : STRING;
+	// Bild der Wolke
 	WetterBild : STRING := BildWolke;
+	// Bild Licht im Haus
 	BildLicht : STRING := GVL_Constants.BildLicht;
 	
+	// Besucher zähler
 	Besucher : INT;
+	// Hat alarm
 	Alarm : BOOL;
+	// Alarm eingeschalten
 	Alarm_V : BOOL;
+	// Heizung Simulation
 	heizung_SIM : INT;
 	
+	// Klingeln (Visu)
 	Sim_Haus_Glocke : BOOL;
+	// Alarm einschalten (Visu)
 	Sim_Haus_Alarm : BOOL;
+	// Alarm zurücksetzen (Haus Visu)
 	Sim_Haus_ResetAlarm: BOOL;
 END_VAR]]></Declaration>
   </GVL>

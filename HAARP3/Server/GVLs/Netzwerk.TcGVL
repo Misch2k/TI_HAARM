@@ -2,28 +2,44 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
   <GVL Name="Netzwerk" Id="{e08085fc-300f-4b23-a231-42f824c44a9d}">
     <Declaration><![CDATA[VAR_GLOBAL
-// Eingänge
-net_licht_01 AT %I* : BOOL;
-net_licht_02 AT %I* : BOOL;
-net_licht_04 AT %I* : BOOL;
-net_besucher_01 AT %I* : INT;
-net_besucher_02 AT %I* : INT;
-net_besucher_04 AT %I* : INT;
-net_alarm_01 AT %I* : BOOL;
-net_alarm_02 AT %I* : BOOL;
-net_alarm_04 AT %I* : BOOL;
-net_heizung_01 AT %I* : INT;
-net_heizung_02 AT %I* : INT;
-net_heizung_04 AT %I* : INT;
+// Licht im Haus 1
+	net_licht_01 AT %I* : BOOL;
+// Licht im Haus 2
+	net_licht_02 AT %I* : BOOL;
+// Licht im Haus 4
+	net_licht_04 AT %I* : BOOL;
+// Besucher im Haus 1
+	net_besucher_01 AT %I* : INT;
+// Besucher im Haus 2
+	net_besucher_02 AT %I* : INT;
+// Besucher im Haus 4
+	net_besucher_04 AT %I* : INT;
+// Alarm im Haus 1
+	net_alarm_01 AT %I* : BOOL;
+// Alarm im Haus 2
+	net_alarm_02 AT %I* : BOOL;
+// Alarm im Haus 4
+	net_alarm_04 AT %I* : BOOL;
+// Heizung im Haus 1
+	net_heizung_01 AT %I* : INT;
+// Heizung im Haus 2
+	net_heizung_02 AT %I* : INT;
+// Heizung im Haus 4
+	net_heizung_04 AT %I* : INT;
 
 
-// Ausgänge
-net_einbruch_alarm AT %Q* : BOOL;
-net_reset_besucher AT %Q* : BOOL;
-net_wind AT %Q* : REAL;
-net_regen AT %Q* : REAL;
-net_sonne AT %Q* : REAL;
-net_heizung_out AT %Q* : INT;
+// Globaler Alarm
+	net_einbruch_alarm AT %Q* : BOOL;
+// Globale Besucher reset
+	net_reset_besucher AT %Q* : BOOL;
+// Simulierter Wind
+	net_wind AT %Q* : REAL;
+// Simulierter Regen
+	net_regen AT %Q* : BOOL;
+// Simuliertes Licht
+	net_sonne AT %Q* : REAL;
+// Heizung resultat
+	net_heizung_out AT %Q* : INT;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

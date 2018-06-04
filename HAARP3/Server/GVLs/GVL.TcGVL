@@ -2,51 +2,88 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
   <GVL Name="GVL" Id="{c31a6ed1-0cc1-4413-898e-fee65ad43a73}">
     <Declaration><![CDATA[VAR_GLOBAL
+	// Alarm Haus 1 Visu
 	Alarm_H1_V : BOOL;
+	// Alarm Haus 2 Visu
 	Alarm_H2_V : BOOL;
+	// Alarm Haus 4 Visu
 	Alarm_H4_V : BOOL;
 	
+	// Sonnenlicht
 	Licht : INT;
+	// Regen
 	Regen : BOOL;
+	// Zeit Manipulation
 	SimZeitMultiplikator : INT;
+	// Zeit Manipulation
 	RealtimeManipulator : INT := RealtimeManipulator_STD;
 
+	// Tages Fortschritt
 	SimTagesFortschritt : REAL;
+	// Simulations Zeit Millisekunde
 	SimMilliSekunde : INT;
+	// Simulations Zeit Sekunde
 	SimSekunde : INT;
+	// Simulations Zeit Minute
 	SimMinute : INT;
+	// Simulations Zeit Stunde
 	SimStunde : INT;
 	
+	// Realtime Zeit Millisekunde
 	RealMilliSekunde : INT;
+	// Realtime Zeit Sekunde
 	RealSekunde : INT;
+	// Realtime Zeit Minute
 	RealMinute : INT;
+	// Realtime Zeit Stunde
 	RealStunde : INT;
 	
+	// Tage seit Start der SPS (Simulation)
 	SimRealTagSeitStart : INT;
+	// Tage seit Start der SPS
 	RealTagSeitStart : INT;
 	
+	// History des Sonnenlichts (Grösse Konstante)
 	SonneHistory : ARRAY [0..DatenHistoryZaehler] OF INT;
+	// History des Windes (Grösse Konstante)
 	WindHistory : ARRAY [0..DatenHistoryZaehler] OF REAL;
 	
+	// Wind visu
 	Wind_V : INT;
+	// Wind automatik
 	Wind_Auto : BOOL;
+	// Wind automatik Visu
 	Wind_Auto_V : BOOL;
+	// True wenn es Windet
 	BWind : BOOL;
 	
+	// Sonne automatik
 	Sonne_Auto : BOOL;
+	// Sonne Automatik visu
 	Sonne_Auto_V : BOOL;
+	// Sonnenlicht Visu
 	Sonne_V	: INT;
+	// Sonnenlicht Automatik
 	Sonne_A	: INT;
+	// Sonnenstand (Visu)
 	L_Sonnenstand : INT;
+	// Bild Sonne / Mond
 	L_Sonne : STRING;
+	// Farbe in HEX für Himmel
 	L_Himmel : DWORD;
+	// Animation Baum
 	L_Baum : INT;
 	
+	// Globale Besucher
 	GL_Besucher : INT;
+	// Besucher zurücksetzen
 	GL_Besucher_reset : BOOL;
+	// Alarm zurücksetzen
 	GL_Alarm_reset : BOOL;
+	// Besucher zurücksetzen Automatik
 	GL_Besucher_reset_A : BOOL;
 	
+	// Regenwahrscheinlichkeit
 	Regenwahrscheinlichkeit : INT := Regenwahrscheinlichkeit_STD;
 END_VAR
 ]]></Declaration>

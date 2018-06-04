@@ -3,30 +3,54 @@
   <GVL Name="GVL_Constants" Id="{a5945d03-7265-4dfc-bd87-4c0358f528bf}">
     <Declaration><![CDATA[VAR_GLOBAL CONSTANT
 	
+	// Grösse des History Arrays
 	DatenHistoryZaehler : INT := 50;
+	// Licht Minimum
 	Licht_min : INT := 100;
+	// Licht Maximum
 	Licht_max : INT := 2500;
+	// Zeit Alarm halten
 	Alarm_time : TIME := T#10S;
+	// Zeit bis Heizung reagiert
 	Heizung_reaktion : TIME := T#20S;
+	// Maximum Wind
 	Maximum_Wind : REAL := 300;
+	// Bild vom Mond
 	BildMond : STRING := 'Mond';
+	// Bild der Sonne
 	BildSonne : STRING := 'Sonne';
+	// Bild Einbruch
 	BildEinbruchAlarm : STRING := 'Einbruch_rot';
+	// Bild kein Einbruch
 	BildEinbruchOk : STRING := 'Einbruch_grun';
+	// Bild Regen
 	BildRegen : STRING := 'Regen';
+	// Bild Wolke
 	BildWolke : STRING := 'Wolke';
+	// Bild Licht angeschalten
 	BildLicht : STRING := 'Licht';
+	// Bild Licht ausgeschalten
 	BildDunkel : STRING := 'Dunkel';
+	// Icon Mond (Wetterdienst)
 	ICON_Mond : STRING := 'ICON_Mond';
+	// Icon Sonne  (Wetterdienst)
 	ICON_Sonne : STRING := 'ICON_Sonne';
+	// Icon Wolke  (Wetterdienst)
 	ICON_Wolke : STRING := 'ICON_Wolke';
+	// Icon Regen  (Wetterdienst)
 	ICON_Regen : STRING := 'ICON_Regen';
+	// Icon Wind und Regen  (Wetterdienst)
 	ICON_WindRegen : STRING := 'ICON_WindRegen';
+	// Icon Wind und Wolke  (Wetterdienst)
 	ICON_WindWolke : STRING := 'ICON_WindWolke';
 	
+	// Zeit Manipulation bei Start
 	RealtimeManipulator_STD : INT := 0;	
+	// Regenwahrscheinlichkeit bei Start
 	Regenwahrscheinlichkeit_STD : INT := 30;
+	// Gradzahl vom Sonnenstand (Fix)
 	TagNachtFixGrad : INT := -90;
+	// Maximale Transparenz vom Sonnenlicht (0 = Schwarz)
 	TagNachtMaxTransparenz : INT := 255;
 END_VAR]]></Declaration>
   </GVL>

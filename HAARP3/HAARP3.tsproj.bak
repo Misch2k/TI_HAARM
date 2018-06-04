@@ -21,52 +21,85 @@
 						<Var>
 							<Name>Netzwerk.net_licht_01</Name>
 							<Comment>
-								<![CDATA[ Eingänge]]>
+								<![CDATA[ Licht im Haus 1]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_licht_02</Name>
+							<Comment>
+								<![CDATA[ Licht im Haus 2]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_licht_04</Name>
+							<Comment>
+								<![CDATA[ Licht im Haus 4]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_alarm_01</Name>
+							<Comment>
+								<![CDATA[ Alarm im Haus 1]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_besucher_01</Name>
+							<Comment>
+								<![CDATA[ Besucher im Haus 1]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_besucher_02</Name>
+							<Comment>
+								<![CDATA[ Besucher im Haus 2]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_besucher_04</Name>
+							<Comment>
+								<![CDATA[ Besucher im Haus 4]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_alarm_02</Name>
+							<Comment>
+								<![CDATA[ Alarm im Haus 2]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_alarm_04</Name>
+							<Comment>
+								<![CDATA[ Alarm im Haus 4]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_heizung_01</Name>
+							<Comment>
+								<![CDATA[ Heizung im Haus 1]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_heizung_02</Name>
+							<Comment>
+								<![CDATA[ Heizung im Haus 2]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_heizung_04</Name>
+							<Comment>
+								<![CDATA[ Heizung im Haus 4]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
@@ -75,28 +108,43 @@
 						<Var>
 							<Name>Netzwerk.net_einbruch_alarm</Name>
 							<Comment>
-								<![CDATA[ Ausgänge]]>
+								<![CDATA[ Globaler Alarm]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_reset_besucher</Name>
+							<Comment>
+								<![CDATA[ Globale Besucher reset]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_heizung_out</Name>
+							<Comment>
+								<![CDATA[ Heizung resultat]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_wind</Name>
+							<Comment>
+								<![CDATA[ Simulierter Wind]]>
+							</Comment>
 							<Type>REAL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_regen</Name>
-							<Type>REAL</Type>
+							<Comment>
+								<![CDATA[ Simulierter Regen]]>
+							</Comment>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_sonne</Name>
+							<Comment>
+								<![CDATA[ Simuliertes Licht]]>
+							</Comment>
 							<Type>REAL</Type>
 						</Var>
 					</Vars>
@@ -265,45 +313,6 @@
 								</Var>
 							</Vars>
 						</EapVar>
-						<EapVar Id="54" VarInOut="1" NvId="54" NvLength="4">
-							<Name>net_regen</Name>
-							<Comment>
-								<![CDATA[Regen]]>
-							</Comment>
-							<ImageId>97</ImageId>
-							<Vars VarGrpType="1">
-								<Name>Eingänge</Name>
-								<Var BoxStateVariable="true">
-									<Name>VarState</Name>
-									<Comment>
-										<![CDATA[0x0001 = Not sent (variable skipped)
-]]>
-									</Comment>
-									<Type>UINT</Type>
-									<BitOffs>64</BitOffs>
-								</Var>
-							</Vars>
-							<Vars VarGrpType="2">
-								<Name>Ausgänge</Name>
-								<Var BoxStateVariable="true">
-									<Name>VarCtrl</Name>
-									<Comment>
-										<![CDATA[0x0001 = Disable publishing
-]]>
-									</Comment>
-									<Type>UINT</Type>
-									<BitOffs>112</BitOffs>
-								</Var>
-								<Var>
-									<Name>VarData</Name>
-									<Comment>
-										<![CDATA[Regen]]>
-									</Comment>
-									<Type>REAL</Type>
-									<BitOffs>128</BitOffs>
-								</Var>
-							</Vars>
-						</EapVar>
 						<EapVar Id="55" VarInOut="1" NvId="55" NvLength="4">
 							<Name>net_sonne</Name>
 							<Comment>
@@ -379,6 +388,42 @@
 									</Comment>
 									<Type>INT</Type>
 									<BitOffs>224</BitOffs>
+								</Var>
+							</Vars>
+						</EapVar>
+						<EapVar Id="54" VarInOut="1" NvId="54" NvLength="1">
+							<Name>net_regen</Name>
+							<Comment>
+								<![CDATA[Wenn es Regnet True]]>
+							</Comment>
+							<ImageId>97</ImageId>
+							<Vars VarGrpType="1">
+								<Name>Eingänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarState</Name>
+									<Comment>
+										<![CDATA[0x0001 = Not sent (variable skipped)
+]]>
+									</Comment>
+									<Type>UINT</Type>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2">
+								<Name>Ausgänge</Name>
+								<Var BoxStateVariable="true">
+									<Name>VarCtrl</Name>
+									<Comment>
+										<![CDATA[0x0001 = Disable publishing
+]]>
+									</Comment>
+									<Type>UINT</Type>
+								</Var>
+								<Var>
+									<Name>VarData</Name>
+									<Comment>
+										<![CDATA[Wenn es Regnet True]]>
+									</Comment>
+									<Type>BOOL</Type>
 								</Var>
 							</Vars>
 						</EapVar>
@@ -1150,7 +1195,6 @@
 			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Server (Publisher)">
 				<Link VarA="PlcTask Outputs^Netzwerk.net_einbruch_alarm" VarB="net_einbruch_alarm^Outputs^VarData"/>
 				<Link VarA="PlcTask Outputs^Netzwerk.net_heizung_out" VarB="net_heizung^Outputs^VarData"/>
-				<Link VarA="PlcTask Outputs^Netzwerk.net_regen" VarB="net_regen^Outputs^VarData"/>
 				<Link VarA="PlcTask Outputs^Netzwerk.net_reset_besucher" VarB="net_reset_besucher^Outputs^VarData"/>
 				<Link VarA="PlcTask Outputs^Netzwerk.net_sonne" VarB="net_sonne^Outputs^VarData"/>
 				<Link VarA="PlcTask Outputs^Netzwerk.net_wind" VarB="net_wind^Outputs^VarData"/>

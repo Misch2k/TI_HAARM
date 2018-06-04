@@ -2,19 +2,29 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
   <GVL Name="GVL_Visu" Id="{9ca865cd-ee54-4f7a-b325-18aa1a18624a}">
     <Declaration><![CDATA[VAR_GLOBAL
+	// Es regnet heute
 	Rege_Heute : BOOL;
+	// Stunde wann regen beginnt
 	RegenSimStunde : INT;
+	// Minute wann regen beginnt
 	RegenSimMinute : INT;
+	// Regendauer in Minuten
 	Regen_Dauer : INT;
+	// Stunde wann regen endet
 	RegenSimStunde_Ende : INT;
+	// Minute wann regen endet
 	RegenSimMinute_Ende : INT;
 	
+	// Bild von Wetterbericht (ICON)
 	Wetterbericht_Bild : STRING;
+	// Bild Vorhersage Wetter (ICON)
 	Wetterbericht_Vorhersage_Bild: STRING;
 	
+	// Simulation eingeschalten
 	Simulation : BOOL := FALSE;
 	
 	
+	// Uhr in Visu (Objekt)
 	Uhr : TUhr;
 	
 END_VAR]]></Declaration>
