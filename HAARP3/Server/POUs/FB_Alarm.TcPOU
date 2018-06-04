@@ -18,7 +18,7 @@ VAR_OUTPUT
 	GL_Alarm : BOOL;
 END_VAR
 VAR
-	has_Alarm : BOOL;
+	HatAlarm : BOOL;
 	Alarm_On : TOF;
 	Trig : F_TRIG;
 	Alarm : RS;
@@ -26,7 +26,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF Simulation THEN
-has_Alarm := 
+HatAlarm := 
 	AL_H1 OR 
 	AL_H2 OR 
 	AL_H4 OR 
@@ -35,7 +35,7 @@ has_Alarm :=
 	AL_H4_V OR
 	AL_Sim;
 ELSE
-	has_Alarm := 
+	HatAlarm := 
 	AL_H1 OR 
 	AL_H2 OR 
 	AL_H4 OR 
@@ -44,9 +44,9 @@ ELSE
 	AL_H4_V;
 END_IF
 	
-Alarm_On(IN := has_Alarm, PT := T_Alarm);
+Alarm_On(IN := HatAlarm, PT := T_Alarm);
 TRIG(CLK := Alarm_On.Q);
-Alarm(SET := has_Alarm, RESET1 :=  TRIG.Q OR reset, Q1 => GL_Alarm);]]></ST>
+Alarm(SET := HatAlarm, RESET1 :=  TRIG.Q OR reset, Q1 => GL_Alarm);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

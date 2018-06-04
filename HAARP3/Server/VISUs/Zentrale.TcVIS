@@ -628,7 +628,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"GL_Besucher"</v>
+                      <v n="Value">"net_wind"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -1242,10 +1242,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>04fb2ba9-ace1-4987-ae8d-3e9e937de482</v>
-                <v>FB_Reinit</v>
-                <v>f82ef2d1-b048-437b-9227-2da936495785</v>
                 <v>FB_Exit</v>
                 <v>9d0bdf39-3baa-4ef8-bed3-124f38bc373a</v>
+                <v>FB_Reinit</v>
+                <v>f82ef2d1-b048-437b-9227-2da936495785</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{07b24594-e8e8-4107-bc0a-ddef57a65970}</v>

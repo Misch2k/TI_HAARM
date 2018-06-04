@@ -7,17 +7,17 @@ VAR_INPUT
 	_m : INT;
 	_h : INT;
 	_day : INT;
-	_percent : INT;
+	_prozent : INT;
 	Simulation : BOOL;
 END_VAR
 VAR_OUTPUT
 	_rain : BOOL;
-	rainToday : BOOL;
-	rainHour : INT;
-	rainMinute : INT;
-	rainDuration : INT;
-	rainTill_h : INT;
-	rainTill_m : INT;
+	HeuteRegen : BOOL;
+	RegenStunde : INT;
+	RegenMinute : INT;
+	RegenDauer : INT;
+	RegenBisStunde : INT;
+	RegenBisMinute : INT;
 END_VAR
 VAR
 	dayTrig : INT_R_TRIG;
@@ -31,37 +31,37 @@ END_VAR]]></Declaration>
 	
 	IF dayTrig._Q THEN
 		_rain := FALSE;
-		rainToday := FALSE;
+		HeuteRegen := FALSE;
 		RAND_H(Seed := 0);
-		rainToday := LREAL_TO_INT(RAND_H.Num * 100) < _percent;
+		HeuteRegen := LREAL_TO_INT(RAND_H.Num * 100) < _prozent;
 		
-		IF rainToday THEN
+		IF HeuteRegen THEN
 			RAND_M(Seed := 1);
 			RAND_D(Seed := 2);
-			rainHour := LREAL_TO_INT(RAND_H.Num * 12);
-			rainMinute := LREAL_TO_INT(RAND_M.Num * 59);
-			rainDuration := LREAL_TO_INT(RAND_D.Num * 480);
-			rainTill_h := rainHour + (rainDuration / 60);
-			rainTill_m := rainMinute + (rainDuration - ((rainTill_h - rainHour) * 60));
-			IF rainTill_m > 60 THEN
-				rainTill_h := rainTill_h + 1;
-				rainTill_m := rainTill_m - 60;
+			RegenStunde := LREAL_TO_INT(RAND_H.Num * 12);
+			RegenMinute := LREAL_TO_INT(RAND_M.Num * 59);
+			RegenDauer := LREAL_TO_INT(RAND_D.Num * 480);
+			RegenBisStunde := RegenStunde + (RegenDauer / 60);
+			RegenBisMinute := RegenMinute + (RegenDauer - ((RegenBisStunde - RegenStunde) * 60));
+			IF RegenBisMinute > 60 THEN
+				RegenBisStunde := RegenBisStunde + 1;
+				RegenBisMinute := RegenBisMinute - 60;
 			END_IF
 		END_IF
 	END_IF
 	
-	IF rainToday THEN
-		IF rainHour < _h OR (rainHour = _h AND rainMinute <= _m) THEN
+	IF HeuteRegen THEN
+		IF RegenStunde < _h OR (RegenStunde = _h AND RegenMinute <= _m) THEN
 			_rain := TRUE;
-			IF rainTill_h <= _h AND rainTill_m <= _m THEN
+			IF RegenBisStunde <= _h AND RegenBisMinute <= _m THEN
 				_rain := FALSE;
-				rainToday := FALSE;
+				HeuteRegen := FALSE;
 			END_IF
 		END_IF
 	END_IF
 ELSE
 	_rain := FALSE;
-	rainToday := FALSE;
+	HeuteRegen := FALSE;
 END_IF]]></ST>
     </Implementation>
   </POU>

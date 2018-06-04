@@ -3,9 +3,9 @@
   <GVL Name="GVL_Constants" Id="{a5945d03-7265-4dfc-bd87-4c0358f528bf}">
     <Declaration><![CDATA[VAR_GLOBAL CONSTANT
 	
-	_history : INT := 50;
-	_Licht_min : INT := 100;
-	_Licht_max : INT := 2500;
+	DatenHistoryZaehler : INT := 50;
+	Licht_min : INT := 100;
+	Licht_max : INT := 2500;
 	Alarm_time : TIME := T#10S;
 	Heizung_reaktion : TIME := T#20S;
 	Maximum_Wind : REAL := 300;
@@ -24,7 +24,7 @@
 	ICON_WindRegen : STRING := 'ICON_WindRegen';
 	ICON_WindWolke : STRING := 'ICON_WindWolke';
 	
-	Sin_Manipulator_STD : INT := 0;	
+	RealtimeManipulator_STD : INT := 0;	
 	Regenwahrscheinlichkeit_STD : INT := 30;
 	TagNachtFixGrad : INT := -90;
 	TagNachtMaxTransparenz : INT := 255;

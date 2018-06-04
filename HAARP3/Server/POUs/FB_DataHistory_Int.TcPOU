@@ -7,7 +7,7 @@ VAR_INPUT
 	_save : BOOL;
 END_VAR
 VAR_OUTPUT
-	_array : ARRAY [0.._history] OF INT;
+	_array : ARRAY [0..DatenHistoryZaehler] OF INT;
 END_VAR
 VAR
 	_i : INT;
@@ -15,10 +15,10 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF _save THEN
-	FOR _i := 0 TO _history - 1 DO
+	FOR _i := 0 TO DatenHistoryZaehler - 1 DO
 		_array[_i] := _array[_i + 1];
 	END_FOR
-	_array[_history] := _val;
+	_array[DatenHistoryZaehler] := _val;
 END_IF]]></ST>
     </Implementation>
   </POU>

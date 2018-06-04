@@ -7,26 +7,95 @@ VAR_INPUT
 	_wind_V : INT;
 	_max : REAL;
 	_time : INT;
-	Simulation : BOOL;
 END_VAR
 VAR_OUTPUT
-	Wind : REAL := 50;
+	Wind : REAL := 0;
 	Trig : BOOL;
 END_VAR
 VAR
+	Count : INT := 0;
+	speed : REAL := 0.01;
+	Step : BOOL := TRUE;
+	valToAdd : REAL;
+	
+	StartTime : TON;
+	StopTime : TON;
+	NoWind : TP;
+	NoWindFirst : BOOL := TRUE;
+	StartT : TIME := T#2S;
+	StopT : TIME := T#2S;
+	Rand : DRAND;
+	Direction : BOOL := TRUE;
+	Prog : REAL;
+	Height : REAL := 100;
 	T_Trig : INT_Trig;
-	random : DRAND();
-	t_rand : INT;
 	_do : BOOL;
-	direction : BOOL;
-END_VAR
+	_manipulator : INT := 100;
+	WindToZero : REAL;
+	BWindToZero : BOOL := FALSE;
+ END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[T_Trig(_val := _time, _Q => _do);
-random();
+      <ST><![CDATA[StartTime(IN := Direction, PT := StartT);
+StopTime(IN := NOT Direction, PT := StopT);
+T_TRIG(_val := _time, _Q => _do);
+NoWind(IN := count = 0, PT := T#30S);
 
-IF _do THEN
-	t_rand := LREAL_TO_INT(random.Num * _max);
+Trig := _do;
+
+IF NoWind.Q THEN
+	_do := FALSE;
+	Wind := 0;
+END_IF
+
+IF _do AND _auto THEN
+	IF Direction THEN
+		Prog := ( TIME_TO_REAL(StartTime.ET) / TIME_TO_REAL(StartT) ) * 90 ;
+		IF StartTime.Q THEN
+			Direction := FALSE;
+			Rand();
+			StopT := LREAL_TO_TIME(Rand.Num * 10000);
+			count := count + 1;
+		END_IF
+	ELSE
+		IF count = 7 THEN
+			WindToZero := Wind;
+			BWindToZero := TRUE;
+		END_IF
+		
+		Prog := 90 - ( TIME_TO_REAL(StopTime.ET) / TIME_TO_REAL(StopT) ) * 90;
+		
+		IF StopTime.Q THEN
+				Direction := TRUE;
+				Rand();
+				StartT := LREAL_TO_TIME(Rand.Num * 10000);
+				Step := NOT STEP;
+				IF count = 7 THEN
+					count := 0;
+					BWindToZero := FALSE;
+				ELSE
+					count := count + 1;
+				END_IF
+			END_IF
+	END_IF	
+
+	IF count = 7 AND BWindToZero THEN
+		Wind := WindToZero * LREAL_TO_REAL(SIN(DEG_TO_RAD(Prog)));
+	ELSE
+		valToAdd := LREAL_TO_REAL(SIN(DEG_TO_RAD(Prog)) * (TIME_TO_REAL(StartT) / _manipulator) ) ;
+			
+		IF STEP THEN
+			valToAdd := valToAdd * ((_max - Wind) / _max);
+			Wind := WIND + valToAdd;
+		ELSE
+			valToAdd := valToAdd * (Wind / _max);
+			Wind := WIND - valToAdd;
+		END_IF
+	END_IF
+END_IF
+
+IF NOT _auto THEN
+	Wind := _wind_V;
 END_IF]]></ST>
     </Implementation>
   </POU>

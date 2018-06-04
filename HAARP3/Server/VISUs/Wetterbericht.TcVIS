@@ -828,7 +828,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Stunde"</v>
+                      <v n="Value">"RegenSimStunde"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -974,7 +974,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Minute"</v>
+                      <v n="Value">"RegenSimMinute"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -1120,7 +1120,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Stunde_Ende"</v>
+                      <v n="Value">"RegenSimStunde_Ende"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -1266,7 +1266,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Minute_Ende"</v>
+                      <v n="Value">"RegenSimMinute_Ende"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -1558,7 +1558,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Stunde_Ende"</v>
+                      <v n="Value">"RegenSimStunde_Ende"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -1704,7 +1704,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Minute_Ende"</v>
+                      <v n="Value">"RegenSimMinute_Ende"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -1850,7 +1850,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Stunde"</v>
+                      <v n="Value">"RegenSimStunde"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -1996,7 +1996,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Minute"</v>
+                      <v n="Value">"RegenSimMinute"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -2142,7 +2142,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"Regen_Stunde"</v>
+                      <v n="Value">"RegenSimStunde"</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -2268,10 +2268,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>8823d803-0e59-4223-a4eb-4c17ad02455f</v>
-                <v>FB_Reinit</v>
-                <v>746f45eb-dfa0-4357-9c73-16c1bc347a8f</v>
                 <v>FB_Exit</v>
                 <v>e78cc58d-16fc-4f6a-b718-1b977e4a8c80</v>
+                <v>FB_Reinit</v>
+                <v>746f45eb-dfa0-4357-9c73-16c1bc347a8f</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{6d8d6614-3869-4780-81e4-da052695176f}</v>

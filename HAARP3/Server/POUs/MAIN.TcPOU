@@ -9,7 +9,7 @@ END_VAR
       <ST><![CDATA[PG_Time();
 PG_Alarm();
 PG_Sonne();
-PG_Rain();
+PG_Regen();
 PG_Heizung();
 PG_Wind();
 PG_Visu();

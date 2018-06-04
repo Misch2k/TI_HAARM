@@ -354,11 +354,11 @@
                     </o>
                     <o>
                       <v n="Id">1518820177L</v>
-                      <v n="Value">"testData"</v>
+                      <v n="Value">"SonneHistory"</v>
                     </o>
                     <o>
                       <v n="Id">102497268L</v>
-                      <v n="Value">"testData"</v>
+                      <v n="Value">"SonneHistory"</v>
                     </o>
                     <o>
                       <v n="Id">4129603265L</v>
@@ -374,7 +374,7 @@
                     </o>
                     <o>
                       <v n="Id">788070771L</v>
-                      <v n="Value">"ARRAY [0..50] OF INT"</v>
+                      <v n="Value">"ARRAY [0..DatenHistoryZaehler] OF INT"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -526,7 +526,7 @@
                         </o>
                         <o>
                           <v n="Id">397264524L</v>
-                          <v n="Value">"Zeit_Multiplikator"</v>
+                          <v n="Value">"SimZeitMultiplikator"</v>
                         </o>
                         <o>
                           <v n="Id">3352862552L</v>
@@ -676,7 +676,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"day"</v>
+                          <v n="Value">"SimRealTagSeitStart"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -826,7 +826,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_minute"</v>
+                          <v n="Value">"SimMinute"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -976,7 +976,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_sekunde"</v>
+                          <v n="Value">"SimSekunde"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -1126,7 +1126,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_mSekunde"</v>
+                          <v n="Value">"SimMilliSekunde"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -1276,7 +1276,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_stunde"</v>
+                          <v n="Value">"SimStunde"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -1587,7 +1587,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_Rday"</v>
+                          <v n="Value">"RealTagSeitStart"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -1713,7 +1713,7 @@
                         </o>
                         <o>
                           <v n="Id">397264524L</v>
-                          <v n="Value">"Sin_manipulator"</v>
+                          <v n="Value">"RealtimeManipulator"</v>
                         </o>
                         <o>
                           <v n="Id">3352862552L</v>
@@ -1863,7 +1863,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_Rminute"</v>
+                          <v n="Value">"RealMinute"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -2013,7 +2013,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_Rsekunde"</v>
+                          <v n="Value">"RealSekunde"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -2163,7 +2163,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_RmSekunde"</v>
+                          <v n="Value">"RealMilliSekunde"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -2313,7 +2313,7 @@
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"_Rstunde"</v>
+                          <v n="Value">"RealStunde"</v>
                         </o>
                         <o>
                           <v n="Id">2827249010L</v>
@@ -3597,11 +3597,11 @@
                     </o>
                     <o>
                       <v n="Id">1518820177L</v>
-                      <v n="Value">"WindData"</v>
+                      <v n="Value">"WindHistory"</v>
                     </o>
                     <o>
                       <v n="Id">102497268L</v>
-                      <v n="Value">"WindData"</v>
+                      <v n="Value">"WindHistory"</v>
                     </o>
                     <o>
                       <v n="Id">4129603265L</v>
@@ -3617,7 +3617,7 @@
                     </o>
                     <o>
                       <v n="Id">788070771L</v>
-                      <v n="Value">"ARRAY [0.._history] OF REAL"</v>
+                      <v n="Value">"ARRAY [0..DatenHistoryZaehler] OF REAL"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -4852,10 +4852,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>e9c8603e-4f6c-4049-9aec-178de9a30d58</v>
-                <v>FB_Reinit</v>
-                <v>840126f3-2bdd-46d4-8ac8-9397d9554e6b</v>
                 <v>FB_Exit</v>
                 <v>93a411b6-0d25-49cf-8460-585b94d18a51</v>
+                <v>FB_Reinit</v>
+                <v>840126f3-2bdd-46d4-8ac8-9397d9554e6b</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{3c341353-2f01-49fb-806c-e402f873d4e6}</v>

@@ -3,31 +3,31 @@
   <POU Name="FB_Besucher" Id="{055fcd59-43e4-42b1-87bc-fd0f391d114e}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Besucher
 VAR_INPUT
-	_bes_H1 : INT;
-	_bes_H2 : INT;
-	_bes_H4 : INT;
-	_bes_Sim : INT;
+	bes_H1 : INT;
+	bes_H2 : INT;
+	bes_H4 : INT;
+	bes_Sim : INT;
 	Simulation : BOOL;
-	_res_V : BOOL;
-	_res_A : BOOL;
+	res_V : BOOL;
+	res_A : BOOL;
 END_VAR
 VAR_OUTPUT
-	_besucher : INT;
-	_res : BOOL;
+	besucher : INT;
+	res : BOOL;
 END_VAR
 VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF Simulation THEN
-	_besucher := _bes_H1 + _bes_H2 + _bes_H4 + _bes_Sim;
+	besucher := bes_H1 + bes_H2 + bes_H4 + bes_Sim;
 ELSE
-	_besucher := _bes_H1 + _bes_H2 + _bes_H4;
+	besucher := bes_H1 + bes_H2 + bes_H4;
 END_IF
-IF _res_V OR _res_A THEN
-	_res := TRUE;
+IF res_V OR res_A THEN
+	res := TRUE;
 ELSE
-	_res := FALSE;
+	res := FALSE;
 END_IF]]></ST>
     </Implementation>
   </POU>

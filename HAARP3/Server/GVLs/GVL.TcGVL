@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
-  <GVL Name="GLV" Id="{c31a6ed1-0cc1-4413-898e-fee65ad43a73}">
+  <GVL Name="GVL" Id="{c31a6ed1-0cc1-4413-898e-fee65ad43a73}">
     <Declaration><![CDATA[VAR_GLOBAL
-	AL_H1_V : BOOL;
-	AL_H2_V : BOOL;
-	AL_H4_V : BOOL;
+	Alarm_H1_V : BOOL;
+	Alarm_H2_V : BOOL;
+	Alarm_H4_V : BOOL;
 	
 	Licht : INT;
 	Regen : BOOL;
-	Zeit_Multiplikator : INT;
-	Sin_manipulator : INT := Sin_Manipulator_STD;
+	SimZeitMultiplikator : INT;
+	RealtimeManipulator : INT := RealtimeManipulator_STD;
 
-	_dayProgress : REAL;
-	_mSekunde : INT;
-	_sekunde : INT;
-	_minute : INT;
-	_stunde : INT;
+	SimTagesFortschritt : REAL;
+	SimMilliSekunde : INT;
+	SimSekunde : INT;
+	SimMinute : INT;
+	SimStunde : INT;
 	
-	_RmSekunde : INT;
-	_Rsekunde : INT;
-	_Rminute : INT;
-	_Rstunde : INT;
+	RealMilliSekunde : INT;
+	RealSekunde : INT;
+	RealMinute : INT;
+	RealStunde : INT;
 	
-	day : INT;
-	_Rday : INT;
+	SimRealTagSeitStart : INT;
+	RealTagSeitStart : INT;
 	
-	testData : ARRAY [0.._history] OF INT;
-	WindData : ARRAY [0.._history] OF REAL;
+	SonneHistory : ARRAY [0..DatenHistoryZaehler] OF INT;
+	WindHistory : ARRAY [0..DatenHistoryZaehler] OF REAL;
 	
 	Wind_V : INT;
 	Wind_Auto : BOOL;

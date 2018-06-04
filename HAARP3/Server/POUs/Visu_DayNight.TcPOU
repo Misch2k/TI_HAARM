@@ -7,9 +7,9 @@ VAR CONSTANT
 END_VAR
 VAR_INPUT
 	_deg : REAL;
-	_licht : INT;
-	_Licht_min : INT;
-	_Licht_max : INT;
+	licht : INT;
+	Licht_min : INT;
+	Licht_max : INT;
 END_VAR
 VAR_OUTPUT
 	_day : STRING;
@@ -33,7 +33,7 @@ ELSE
 	_stand := REAL_TO_INT(timeProg);
 END_IF
 
-transparency := REAL_TO_INT( ((_Licht - _Licht_min) / INT_TO_REAL(_Licht_max - _Licht_min)) * GVL_Constants.TagNachtMaxTransparenz );
+transparency := REAL_TO_INT( ((Licht - Licht_min) / INT_TO_REAL(Licht_max - Licht_min)) * GVL_Constants.TagNachtMaxTransparenz );
 
 HEX := DWORD_TO_HEXSTR(INT_TO_UINT(transparency), 2, FALSE);
 

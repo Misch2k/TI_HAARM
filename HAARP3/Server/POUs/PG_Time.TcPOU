@@ -328,7 +328,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"Sin_manipulator"</v>
+                      <v n="Text">"RealtimeManipulator"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">45L</v>
                     </o>
@@ -351,7 +351,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"Zeit_Multiplikator"</v>
+                      <v n="Text">"SimZeitMultiplikator"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">7L</v>
                     </o>
@@ -374,7 +374,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_dayProgress"</v>
+                      <v n="Text">"SimTagesFortschritt"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">27L</v>
                     </o>
@@ -397,7 +397,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_RmSekunde"</v>
+                      <v n="Text">"RealMilliSekunde"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">65L</v>
                     </o>
@@ -420,7 +420,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_mSekunde"</v>
+                      <v n="Text">"SimMilliSekunde"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">30L</v>
                     </o>
@@ -443,7 +443,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_Rsekunde"</v>
+                      <v n="Text">"RealSekunde"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">68L</v>
                     </o>
@@ -466,7 +466,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_sekunde"</v>
+                      <v n="Text">"SimSekunde"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">33L</v>
                     </o>
@@ -489,7 +489,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_Rminute"</v>
+                      <v n="Text">"RealMinute"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">71L</v>
                     </o>
@@ -512,7 +512,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_minute"</v>
+                      <v n="Text">"SimMinute"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">36L</v>
                     </o>
@@ -535,7 +535,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_Rstunde"</v>
+                      <v n="Text">"RealStunde"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">74L</v>
                     </o>
@@ -558,7 +558,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_stunde"</v>
+                      <v n="Text">"SimStunde"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">39L</v>
                     </o>
@@ -581,7 +581,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_Rday"</v>
+                      <v n="Text">"RealTagSeitStart"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">77L</v>
                     </o>
@@ -604,7 +604,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"day"</v>
+                      <v n="Text">"SimRealTagSeitStart"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">42L</v>
                     </o>
@@ -852,7 +852,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_stunde"</v>
+                      <v n="Text">"SimStunde"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">146L</v>
                     </o>
@@ -898,7 +898,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_minute"</v>
+                      <v n="Text">"SimMinute"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">124L</v>
                     </o>
@@ -951,7 +951,7 @@ END_VAR
                     <o n="Text" t="CFCText">
                       <v n="Bounds">"0, 0, 0, 0"</v>
                       <n n="ElementGroupId" />
-                      <v n="Text">"_sekunde"</v>
+                      <v n="Text">"SimSekunde"</v>
                       <v n="Modifiable">true</v>
                       <v n="Id">128L</v>
                     </o>
