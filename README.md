@@ -1,7 +1,5 @@
-#Projekt HAARP
-
-##Technische Informatik Projekt
-
+# Projekt HAARP
+## Technische Informatik Projekt
 Programm für eine **SPS** geschrieben mit **TwinCat3.**
 Dies ist eine Zentralsteuerung für eine Wohngemeinschaft welcher mehrere Gebäude angehören.
 
@@ -23,3 +21,5 @@ Im Simulationsbetrieb werden auch die Daten des Simulationshaus berechnet.
 1. Sonne als Real
 2. Regen als Bool
 3. Wind als Real
+
+und mehr...
