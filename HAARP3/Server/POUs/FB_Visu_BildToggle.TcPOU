@@ -16,7 +16,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF FIRST THEN
+      <ST><![CDATA[// Selectorbaustein um einen String (Bild ID) Zumzuschalten
+IF FIRST THEN
 	IF val THEN
 		BILD := s_t;
 	ELSE

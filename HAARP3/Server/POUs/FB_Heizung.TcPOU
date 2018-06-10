@@ -50,8 +50,8 @@ END_VAR
 
 	FIRST := FALSE;
 ELSE
-	
-	IF history[0] <> Heizung_01 OR history[1] <> Heizung_02 OR history[2] <> Heizung_04 OR history[3] <> Heizung_Sim THEN
+	// Wen es eine Änderung der Werte gab (Sim Haus nur miteinbeziehen, wenn Simulation eingeschalten ist.
+	IF history[0] <> Heizung_01 OR history[1] <> Heizung_02 OR history[2] <> Heizung_04 OR (history[3] <> Heizung_Sim AND Simulation) THEN
 		history[0] := Heizung_01;
 		history[1] := Heizung_02;
 		history[2] := Heizung_04;
@@ -62,11 +62,13 @@ ELSE
 			history[3] := 0;
 		END_IF
 		
+		// Höchsten Wert finden
 		FOR _i := 0 TO 3 DO
 			IF history[_i] > maximum THEN
 				maximum := history[_i];
 			END_IF
 		END_FOR
+		// Prüfen ob Wert ungleich beim Letzen mal und Timer starten bis neue Temperatur gesendet wird
 		IF maximum <> history[4] THEN
 			run_timer := TRUE;
 			history[4] := maximum;	
@@ -74,6 +76,7 @@ ELSE
 	END_IF
 END_IF
 
+// Sendeverzögerung der neuen Temperatur.
 IF run_timer THEN
 	IF timer.Q THEN
 		run_timer := FALSE;

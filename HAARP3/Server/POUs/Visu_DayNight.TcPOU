@@ -24,7 +24,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[timeProg := _deg + Fix_Degree;
+      <ST><![CDATA[// Tag- / Nachtwechsel Simulieren 
+timeProg := _deg + Fix_Degree;
 IF timeProg < 0 OR timeProg > 180 THEN
 	_stand := REAL_TO_INT(timeProg + 180);
 	_day := GVL_Constants.BildMond;
@@ -33,10 +34,13 @@ ELSE
 	_stand := REAL_TO_INT(timeProg);
 END_IF
 
+// Transparenz in %
 transparency := REAL_TO_INT( ((Licht - Licht_min) / INT_TO_REAL(Licht_max - Licht_min)) * GVL_Constants.TagNachtMaxTransparenz );
 
+// Hexwert für Transparenz berechnen
 HEX := DWORD_TO_HEXSTR(INT_TO_UINT(transparency), 2, FALSE);
 
+// Hexadecimal Code Generieren für Hintergrund
 color := '16#';
 color := CONCAT(color, HEX);
 color := CONCAT(color, 'FFFF00');

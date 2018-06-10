@@ -1195,6 +1195,7 @@
 			<OwnerB Name="TIID^Netzvariablen (EtherCAT Automation Protocol)^Server (Publisher)">
 				<Link VarA="PlcTask Outputs^Netzwerk.net_einbruch_alarm" VarB="net_einbruch_alarm^Outputs^VarData"/>
 				<Link VarA="PlcTask Outputs^Netzwerk.net_heizung_out" VarB="net_heizung^Outputs^VarData"/>
+				<Link VarA="PlcTask Outputs^Netzwerk.net_regen" VarB="net_regen^Outputs^VarData"/>
 				<Link VarA="PlcTask Outputs^Netzwerk.net_reset_besucher" VarB="net_reset_besucher^Outputs^VarData"/>
 				<Link VarA="PlcTask Outputs^Netzwerk.net_sonne" VarB="net_sonne^Outputs^VarData"/>
 				<Link VarA="PlcTask Outputs^Netzwerk.net_wind" VarB="net_wind^Outputs^VarData"/>

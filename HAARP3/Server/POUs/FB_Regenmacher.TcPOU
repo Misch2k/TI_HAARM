@@ -26,15 +26,20 @@ VAR
 	RAND_D : DRAND;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF _gen AND Simulation THEN
+      <ST><![CDATA[// Wenn Regenwahrscheinlichkeit ungleich 0 ist _gen gleich TRUE.
+IF _gen THEN
+	// Trigger für Tageswechsel
+	// Weil der Regen immer um Mitternacht neu berechnet wird.
 	dayTrig(_val := _day);
 	
 	IF dayTrig._Q THEN
 		_rain := FALSE;
 		HeuteRegen := FALSE;
 		RAND_H(Seed := 0);
+		// Berechnen ob es heute regnet, anhand der Regenwahrscheinlichkeit.
 		HeuteRegen := LREAL_TO_INT(RAND_H.Num * 100) < _prozent;
 		
+		// Wenn es heute regnet, Start, Dauer und Endzeit berechnen.
 		IF HeuteRegen THEN
 			RAND_M(Seed := 1);
 			RAND_D(Seed := 2);
@@ -50,6 +55,7 @@ END_VAR]]></Declaration>
 		END_IF
 	END_IF
 	
+	// Ausgabe, ob es jetzt Regnet.
 	IF HeuteRegen THEN
 		IF RegenStunde < _h OR (RegenStunde = _h AND RegenMinute <= _m) THEN
 			_rain := TRUE;

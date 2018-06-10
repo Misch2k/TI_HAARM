@@ -120,13 +120,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>Netzwerk.net_heizung_out</Name>
-							<Comment>
-								<![CDATA[ Heizung resultat]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>Netzwerk.net_wind</Name>
 							<Comment>
 								<![CDATA[ Simulierter Wind]]>
@@ -139,6 +132,13 @@
 								<![CDATA[ Simulierter Regen]]>
 							</Comment>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Netzwerk.net_heizung_out</Name>
+							<Comment>
+								<![CDATA[ Heizung resultat]]>
+							</Comment>
+							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>Netzwerk.net_sonne</Name>

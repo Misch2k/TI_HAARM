@@ -30,7 +30,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[RTrig_H1(CLK := h1Alarm);
+      <ST><![CDATA[// Trigger für alle häuser
+RTrig_H1(CLK := h1Alarm);
 FTrig_H1(CLK := h1Alarm);
 RTrig_H2(CLK := h1Alarm);
 FTrig_H2(CLK := h1Alarm);
@@ -39,6 +40,7 @@ FTrig_H4(CLK := h1Alarm);
 FTrig_HSim(CLK := hSimAlarm);
 RTrig_HSim(CLK := hSimAlarm);
 
+// Initialisieren
 IF first THEN
 	IF h1Alarm THEN
 		SH1 := Bild_Alarm;
@@ -64,6 +66,7 @@ IF first THEN
 first := FALSE;
 
 ELSE
+	// Live Betrieb (Damit der String nicht jeden Zyklus neu geschrien wird, sondern nur bei einer Änderung.)
 	IF RTRIG_H1.Q THEN
 		SH1 := Bild_Alarm;
 	ELSIF FTRIG_H1.Q THEN

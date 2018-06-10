@@ -15,7 +15,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF Regen AND Wind THEN
+      <ST><![CDATA[// Das richtige Icon anzeigen anhand der Wetterbedingungen
+IF Regen AND Wind THEN
 	Aktuell := GVL_CONSTANTS.ICON_WindRegen;
 ELSIF Regen THEN
 	Aktuell := GVL_CONSTANTS.ICON_Regen;

@@ -38,7 +38,9 @@ VAR
     <Implementation>
       <ST><![CDATA[StartTime(IN := Direction, PT := StartT);
 StopTime(IN := NOT Direction, PT := StopT);
+// Triggert _do auf True alle 1 Sek.
 T_TRIG(_val := _time, _Q => _do);
+// Nach jeder Böhe 30sek pause -> Könnte auch Random generiert werden.
 NoWind(IN := count = 0, PT := T#30S);
 
 Trig := _do;
@@ -48,9 +50,14 @@ IF NoWind.Q THEN
 	Wind := 0;
 END_IF
 
+// Nur Berechnen wenn Automatik und _do true sind.
 IF _do AND _auto THEN
+	// Direction ist True wenn die Sinuskurve hoch gehen soll.
 	IF Direction THEN
+		
+		// Input für SIN Funktion berechnen für eine schöne Sinuskurve
 		Prog := ( TIME_TO_REAL(StartTime.ET) / TIME_TO_REAL(StartT) ) * 90 ;
+		// Wenn die Kurve das Ende erreicht hat, direction umschalten und Zufallszeit berechnen.
 		IF StartTime.Q THEN
 			Direction := FALSE;
 			Rand();
@@ -58,13 +65,17 @@ IF _do AND _auto THEN
 			count := count + 1;
 		END_IF
 	ELSE
+		// Wenn die Kurve runter gehen soll.
+		// count = 7 -> Wind muss bis auf 0 runter gehen.
 		IF count = 7 THEN
 			WindToZero := Wind;
 			BWindToZero := TRUE;
 		END_IF
 		
+		// Input für SIN Funktion für eine schöne Sinuskurve
 		Prog := 90 - ( TIME_TO_REAL(StopTime.ET) / TIME_TO_REAL(StopT) ) * 90;
 		
+		// WWenn die Kurve das Ende erreicht hat, Direction umschalten und Zufallszeit berechnen.
 		IF StopTime.Q THEN
 				Direction := TRUE;
 				Rand();
@@ -84,6 +95,8 @@ IF _do AND _auto THEN
 	ELSE
 		valToAdd := LREAL_TO_REAL(SIN(DEG_TO_RAD(Prog)) * (TIME_TO_REAL(StartT) / _manipulator) ) ;
 			
+		// Neuen Wind berechnen. Bei annäherung an Maximum oder Minimum Wert änderung verkleinern.
+		// Somit wird nie Das Maximum oder Minimum überschritten.
 		IF STEP THEN
 			valToAdd := valToAdd * ((_max - Wind) / _max);
 			Wind := WIND + valToAdd;
@@ -94,6 +107,7 @@ IF _do AND _auto THEN
 	END_IF
 END_IF
 
+// Wenn Wind Automatik ausgeschalten ist, Slider von Visu direkt als Wind verwenden.
 IF NOT _auto THEN
 	Wind := _wind_V;
 END_IF]]></ST>

@@ -26,7 +26,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF Simulation THEN
-HatAlarm := 
+	// Wenn Simulation eingeschalten Haus_Sim mit einbeziehen
+	HatAlarm := 
 	AL_H1 OR 
 	AL_H2 OR 
 	AL_H4 OR 
@@ -35,6 +36,7 @@ HatAlarm :=
 	AL_H4_V OR
 	AL_Sim;
 ELSE
+	// Wenn Simulation ausgeschalten Haus_Sim nicht mit einbeziehen
 	HatAlarm := 
 	AL_H1 OR 
 	AL_H2 OR 
@@ -44,6 +46,7 @@ ELSE
 	AL_H4_V;
 END_IF
 	
+// Ausschaltverzögerung für den Alarm
 Alarm_On(IN := HatAlarm, PT := T_Alarm);
 TRIG(CLK := Alarm_On.Q);
 Alarm(SET := HatAlarm, RESET1 :=  TRIG.Q OR reset, Q1 => GL_Alarm);]]></ST>

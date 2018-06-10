@@ -20,10 +20,13 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF Simulation THEN
+	// Wenn Simulation eingeschalten ist, das SIM Haus dazurechnen
 	besucher := bes_H1 + bes_H2 + bes_H4 + bes_Sim;
 ELSE
+	// Live Betrieb ohne Sim_Haus
 	besucher := bes_H1 + bes_H2 + bes_H4;
 END_IF
+// Besucher zurücksetzten (Automatisch oder Manuell)
 IF res_V OR res_A THEN
 	res := TRUE;
 ELSE

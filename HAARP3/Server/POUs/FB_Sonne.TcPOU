@@ -25,14 +25,20 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[T_Trig(_val := _time, _Q => _do);
+      <ST><![CDATA[// Trigger für die Ausführung alle 1sek.
+T_Trig(_val := _time, _Q => _do);
+// _do wird für die History (Statistik) verwendet.
 _trig := _do;
 
+
+// Wenn Licht Automatik eingeschalten, Automatisch berechnen
 IF _do AND _auto THEN
+	// Berechnen der Lichtemmission anhand der Uhrzeit _val
 	diff := (_max - _min) / 2;
 	average := REAL_TO_INT(_min + diff);
 	_sin := LREAL_TO_INT(SIN(DEG_TO_RAD(_val + dayFix)) * diff + average);
 ELSIF _do THEN
+	// Wenn Licht Automatik ausgeschalten, Wert von Slider nehmen.
 	_sin := _visu_val;
 END_IF]]></ST>
     </Implementation>

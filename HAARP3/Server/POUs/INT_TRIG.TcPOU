@@ -14,7 +14,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF first THEN
+      <ST><![CDATA[// R_Trig und F_Trig in einem für INT Werte.
+IF first THEN
 	History := _val;
 	first := FALSE;
 ELSE

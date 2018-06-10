@@ -17,7 +17,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF _rotate THEN
+      <ST><![CDATA[// Wenn es Windet, bewegt sich der Baum.
+IF _rotate THEN
 	IF rotateRight THEN
 		IF _rot > _maxDeg THEN
 			rotateRight := FALSE;
